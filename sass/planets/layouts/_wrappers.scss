@@ -3,4 +3,5 @@
 \*------------------------------------*/
 [class*="__inner"] {
     @include grid-row;
+    padding: 0 $pad;
 }

@@ -3,3 +3,14 @@
     ----------------------------------*
     ::
 \*------------------------------------*/
+%btn {
+	background: #00a44b;
+	border: none;
+	border-radius: 5px;
+	color: #ffffff;
+	min-width: 100px;
+	font: {
+		size: emCalc(15.2pt);
+		weight: 100;
+	}
+}

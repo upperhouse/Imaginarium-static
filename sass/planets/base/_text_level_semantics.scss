@@ -3,20 +3,47 @@
     ------------------------------------*
     ::Normalize.css v3.0.0 | MIT License | git.io/normalize
 \*------------------------------------*/
+
+/*------------------------------------*\
+    ::Globals
+\*------------------------------------*/
+html, body {
+	color: $color-body;
+	font: {
+		family: $fam-body;
+		size: emCalc(16pt);
+	}
+	line-height: emCalc(25pt);
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 {
+	font-size: emCalc(28pt);
+	margin: 0.67em 0;
+	color: $color-2;
+}
+
+h2 {
+	font-size: emCalc(21pt);
+}
+
 abbr[title] {
 	border-bottom: 1px dotted;
 }
+
 b,
 strong {
 	font-weight: bold;
 }
+
 dfn {
 	font-style: italic;
 }
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
+
+
 mark {
 	background: #ff0;
 	color: #000;

@@ -5,8 +5,16 @@
 \*------------------------------------*/
 a {
 	background: transparent;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 a:active,
 a:hover {
 	outline: 0;
+}
+
+.btn {
+	@extend %btn;
 }
