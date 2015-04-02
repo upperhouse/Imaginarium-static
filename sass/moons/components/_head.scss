@@ -2,11 +2,44 @@
     ::Header
 \*------------------------------------*/
 .main-head {
+	position: relative;
 	.main-head__inner {
 		position: relative;
-		padding: 20px $pad;
+		padding: 20px $pad 35px $pad;
 	}
+	.main-head__angler {
+		display: block;
+		width: 100%;
+		height: 175px;
+		position: absolute;
+		overflow: hidden;
+		&:after {
+			position: absolute;
+			bottom: -60px;
+			left: -1em;
+			width: 105%; 
+			height:83px;
+			overflow: hidden;
+			background: $color-1;
+			content: "";
+			transform: translateZ(1px) rotate(-1.5deg);
+			outline: 1px solid transparent;
+			z-index: -1;
+			box-shadow: 0 4px 2px -2px rgba(121, 108, 108, 0.5);
+		}
 
+		@include bp($max:1080px){
+			&:after {
+				height: 88px;
+			}
+		}
+
+		@include bp($solarsystem){
+			&:after {
+				background: #ffffff;
+			}
+		}
+	}
 	.main-head__logo {
 		width: 25%;
 		display: inline-block;
