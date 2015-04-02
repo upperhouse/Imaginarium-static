@@ -35,6 +35,164 @@
 			&:last-of-type {
 				border-right: none;
 			}
+			&:hover {
+				> a {
+					color: $color-3;
+					text-decoration: none;
+				}
+			}
+			ul {
+				background: $color-5;
+				margin-top: 5px;
+				width: 200px;
+				padding: 8px 0;
+				li {
+					width: 100%;
+					text-align: left;
+					a {
+						padding: 3px 10px;
+						width: 100%;
+					}
+					&:hover {
+						> a {
+							color: $color-3;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+		.menu-item__mobile {
+			display: none;
+		}
+	}
+
+}
+
+.main-head__nav {
+	width: 60%;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 25px;
+
+	@include bp($solarsystem){
+		display: block;
+		padding-top: 25px;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.main-head__mobile-menu {
+	display: none;
+}
+
+@include bp($solarsystem){
+	.main-head__nav {
+		position: absolute;
+		top: 54px; left: 0; right: 0;
+		background: $color-2;
+		padding-top: 0;
+		transform: translateY(-100%);
+		transition: transform 400ms;
+		&.active {
+			transform: translateY(0);
+		}
+		.menu {
+			> .menu-item {
+				width: 100%;
+				border-right: none;
+				&:nth-child(2){
+					position: relative;
+					// &:before {
+					// 	content: "";
+					// 	position: absolute;
+					// 	right: 10px;
+					// 	top: 8px;
+					// 	width: 0; 
+					// 	height: 0; 
+					// 	border-top: 15px solid transparent;
+					// 	border-bottom: 15px solid transparent;
+					// 	border-left: 15px solid #ffffff;
+					// }
+				}
+				&:nth-child(3){
+					width: 100%;
+				}
+				&:nth-child(4){
+					width: 100%;
+				}
+				&:hover {
+					> a {
+						color: $color-1;
+					}
+				}
+				a {
+					color: #ffffff;
+					font: {
+						size: emCalc(20pt);
+					}
+					padding: 10px 0;
+					border-bottom: 1px solid $color-2-dark;
+				}
+				ul {
+					display: block;
+					opacity: 1;
+					visibility: visible;
+					position: relative;
+					margin: 0;
+					padding: 0;
+					width: 100%;
+					overflow: hidden;
+					li {
+						background: $color-2-dark;
+						text-align: center;
+						border-bottom: 1px solid $color-2;
+						a {
+							padding: 8px 0;
+							font-size: emCalc(16pt);
+							color: #ffffff;
+						}
+						&:hover {
+							a {
+								color: $color-1;
+							}
+						}
+					}
+
+				}
+			}
+			.menu-item__mobile {
+				display: block;
+				width: 100%;
+				text-align: center;
+				a {
+					display: inline-block;
+					padding-top: 5px;
+					svg {
+						fill: $color-2;
+						width: 40px;
+						height: 35px;
+					}
+					&:hover {
+						svg {
+							fill: $color-3;
+						}
+					}
+				}
+			}
+		}
+	}
+	.main-head__mobile-menu {
+		display: block;
+		position: absolute;
+		z-index: 0;
+		top: 10px;
+		left: 0; right: 0;
+		width: 100%;
+		text-align: center;
+		&:hover {
+			cursor:pointer;
 		}
 	}
 }

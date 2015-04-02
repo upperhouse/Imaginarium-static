@@ -12,13 +12,6 @@
 		display: inline-block;
 		vertical-align: middle;
 	}
-
-	.main-head__nav {
-		width: 60%;
-		display: inline-block;
-		vertical-align: middle;
-		margin-top: 25px;
-	}
 	.main-head__actions {
 		position: absolute;
 		right: 8px; top: 37%;
@@ -38,6 +31,12 @@
 				svg {
 					max-width: 25px;
 					max-height: 25px;
+					fill: $color-3;
+				}
+				&:hover {
+					svg {
+						fill: $color-2;
+					}
 				}
 			}
 		}
@@ -47,7 +46,10 @@
 		display: inline-block;
 		vertical-align: bottom;
 		#PageSearchFormButton {
-			width: 25px;
+			width: 25px; height: 54px;
+			background-image: url('../images/global/search.png');
+			background-size: contain;
+			background-repeat: no-repeat;
 			&:hover {
 				cursor: pointer;
 			}
@@ -79,14 +81,30 @@
 				max-width: 250px;
 			}
 		}
-		.main-head__nav {
-			display: block;
-			padding-top: 25px;
-			width: 100%;
-			margin: 0 auto;
+		.main-head__inner {
+			padding-top: 66px;
 		}
 		.main-head__actions {
-			top: 20%;
+			width: 100%;
+			height: 54px;
+			border-bottom: 1px solid $color-2-dark;
+			background: $color-2;
+			position: absolute;
+			top: 0; left: 0; right: 0;
+		}
+		.main-head__social {
+			display: none;
+		}
+		.main-head__search {
+			float: right;
+			padding-right: 25px;
+		}
+		.main-head__search {
+			position: relative;
+			z-index: 5;
+			#PageSearchFormButton {
+				background-image: url('../images/global/mobile-search.png');
+			}
 		}
 	}
 }

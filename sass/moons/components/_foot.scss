@@ -61,6 +61,12 @@
 						svg {
 							max-width: 25px;
 							max-height: 25px;
+							fill: $color-3;
+						}
+						&:hover {
+							svg {
+								fill: $color-2;
+							}
 						}
 
 						@include bp($planetary){
