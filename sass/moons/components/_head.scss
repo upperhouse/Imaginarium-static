@@ -1,3 +1,92 @@
 /*------------------------------------*\
     ::Header
 \*------------------------------------*/
+.main-head {
+	.main-head__inner {
+		position: relative;
+		padding: 20px $pad;
+	}
+
+	.main-head__logo {
+		width: 25%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.main-head__nav {
+		width: 60%;
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 25px;
+	}
+	.main-head__actions {
+		position: absolute;
+		right: 8px; top: 37%;
+		width: 150px;
+	}
+	.main-head__social {
+		width: 80%;
+		display: inline-block;
+		vertical-align: middle;
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				float: left;
+				margin-right: 5px;
+				svg {
+					max-width: 25px;
+					max-height: 25px;
+				}
+			}
+		}
+	}
+
+	.main-head__search {
+		display: inline-block;
+		vertical-align: bottom;
+		#PageSearchFormButton {
+			width: 25px;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		#PageSearchForm {
+			opacity: 0;
+			background: $color-1;
+			border-radius: 5px;
+			padding: 10px;
+			position: absolute;
+			right: 0;
+			top: 90%;
+			width: 225px;
+			transition: opacity 400ms;
+			input {
+				width: 100%;
+			}
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+
+	@include bp($solarsystem){
+		.main-head__logo {
+			width: 100%;
+			text-align: center;
+			img {
+				max-width: 250px;
+			}
+		}
+		.main-head__nav {
+			display: block;
+			padding-top: 25px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.main-head__actions {
+			top: 20%;
+		}
+	}
+}

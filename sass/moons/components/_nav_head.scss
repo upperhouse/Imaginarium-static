@@ -8,4 +8,33 @@
 	    $easy-hover: 50px,           		//amount of invisible overflow for sub menu (take out to not use)
 	    $easy-hover-top: 1.2em       		//set top easy-hover value (you can also set $easy-hover-right, -bottom, and -left separately)
 	);
+
+	.menu {
+		margin: 0;
+		padding: 0;
+
+		> .menu-item {
+			width: 12.5%;
+			text-align: center;
+			border-right: 1px solid $color-5;
+			a {
+				display: block;
+				width: 100%;
+				padding: 5px 0;
+				color: $color-body;
+				font: {
+					size: emCalc(15pt);
+				}
+			}
+			&:nth-child(3){
+				width: 19%;
+			}
+			&:nth-child(4){
+				width: 15%;
+			}
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+	}
 }
