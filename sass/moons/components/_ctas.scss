@@ -1,0 +1,82 @@
+/*------------------------------------*\
+    :: Circle CTAs
+\*------------------------------------*/
+.circle__cta {
+	display: block;
+	position: relative;
+	border-radius: 100%;
+	color: #ffffff;
+	height: 350px;
+	padding: 8%;
+	margin-top: 25px;
+	text-align: center;
+	font: {
+		size: emCalc(16pt);
+		weight: 100;
+	}
+	a {
+		display: block;
+		color: #ffffff;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	h2 {
+		width: 75%;
+		margin: 5px auto;
+		letter-spacing: 1px;
+	}
+	p {
+		margin: 0;
+		max-height: 150px;
+		overflow: hidden;
+	}
+	&:after {
+		content: "";
+		position:absolute;
+		height: 100px;
+		width: 100px;
+		bottom: -40px; left: 50%;
+		margin-left: -50px;
+	}
+	.circle__cta--btn {
+		display: block;
+		margin-top: 3px;
+		color: $color-1;
+		font: {
+			size: emCalc(17pt);
+			weight: bold;
+		}
+		letter-spacing: 1px;
+		width: 100%;
+		&:after {
+			content: ">>";
+			color: #ffffff;
+			margin-left: 5px;
+			font: {
+				size: emCalc(15pt);
+				weight: 100;
+			}
+		}
+	}
+
+	&.circle__cta--blue {
+		background: $color-3;
+	}
+
+	&.circle__cta--red {
+		background: #9b171a;
+	}
+
+	&.circle__cta--ship {
+		&:after {
+			background: url('../images/global/ship.png');
+		}
+	}
+
+	&.circle__cta--brain {
+		&:after {
+			background: url('../images/global/brain.png');
+		}
+	}
+}

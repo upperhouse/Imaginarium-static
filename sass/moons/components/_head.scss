@@ -114,7 +114,7 @@
 			.hero__image {
 				height: 220px;
 				background-size: cover;
-				background-position: center;
+				background-position: center 30%;
 
 				@include bp($max:850px){
 					height: 250px;
@@ -129,6 +129,7 @@
 				}
 				letter-spacing: 1px;
 				text-transform: uppercase;
+				backface-visibility: hidden;
 			}
 			.hero-slider__cta {
 				background: $color-2;
@@ -245,6 +246,7 @@
 			background: $color-2;
 			position: absolute;
 			top: 0; left: 0; right: 0;
+			z-index: 30;
 		}
 		.main-head__social {
 			display: none;

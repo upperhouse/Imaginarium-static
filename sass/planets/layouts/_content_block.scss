@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    :: Content Block
+\*------------------------------------*/
+.content__block {
+	@include col(12);
+	padding: 35px 0;
+
+	.content__block--one,
+	.content__block--two,
+	.content__block--three {
+		@include col(4);
+	}
+
+	.content__block--half {
+		@include col(6);
+	}
+}

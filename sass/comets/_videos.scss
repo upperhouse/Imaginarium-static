@@ -1,0 +1,11 @@
+/*------------------------------------*\
+    :: Videos
+\*------------------------------------*/
+.video__description {
+	background: $color-1;
+	padding: 10px;
+	color: $color-3;
+	font: {
+		size: emCalc(14pt);
+	}
+}
