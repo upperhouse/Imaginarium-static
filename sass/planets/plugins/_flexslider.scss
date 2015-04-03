@@ -7,11 +7,15 @@
 
 	.flex-control-nav {
 		display: none;
-		bottom: 100px;
+		bottom: auto; top: 61%;
 		max-width: 100%;
 
 		@include bp($solarsystem) {
 			display: block;
+		}
+
+		@include bp($max:500px){
+			top: 50%;
 		}
 	}
 
@@ -38,7 +42,7 @@
 		display: none;
 
 		.flex-prev {
-			left: 35%; top: 63%;
+			left: 35%; top: 65%;
 			opacity: 1;
 			height: 20px;
 			width: 22px;
@@ -50,7 +54,7 @@
 			}
 		}
 		.flex-next {
-			right: 35%; top: 63%;
+			right: 35%; top: 65%;
 			opacity: 1;
 			height: 20px;
 			width: 22px;
@@ -63,6 +67,32 @@
 		}
 		@include bp($solarsystem){
 			display: block;
+		}
+
+		@include bp($max:500px){
+			.flex-prev,
+			.flex-next {
+				top: 55%;
+			}
+			.flex-prev {
+				left: 15%;
+			}
+			.flex-next {
+				right: 15%;
+			}
+		}
+	}
+
+	@include bp($max:500px){
+		&:hover {
+			.flex-direction-nav {
+				.flex-prev {
+					left: 15%;
+				}
+				.flex-next {
+					right: 15%;
+				}
+			}
 		}
 	}
 }

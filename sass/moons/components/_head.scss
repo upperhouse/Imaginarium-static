@@ -35,9 +35,7 @@
 		}
 
 		@include bp($solarsystem){
-			&:after {
-				background: #ffffff;
-			}
+			height: 225px;
 		}
 	}
 	.main-head__logo {
@@ -113,6 +111,15 @@
 		}
 		.hero-slider__slide {
 			position: relative;
+			.hero__image {
+				height: 220px;
+				background-size: cover;
+				background-position: center;
+
+				@include bp($max:850px){
+					height: 250px;
+				}
+			}
 			.hero__text {
 				position: absolute;
 				bottom: 40%; right: 10%;
@@ -129,7 +136,7 @@
 				height: 75px;
 				padding: 15px $pad;
 				font: {
-					size: emCalc(16pt);
+					size: emCalc(15pt);
 				}
 				letter-spacing: 1px;
 				.cta__text {
@@ -180,6 +187,41 @@
 				}
 				.hero-slider__cta {
 					height: 100px;
+				}
+			}
+
+			@include bp($max:850px){
+				.hero-slider__cta {
+					background: #ffffff;
+					color: $color-body;
+					.cta__text {
+						@include col(12);
+						text-align: center;
+						strong {
+							display: block;
+							@include col(12);
+						}
+					}
+					.cta__btn {
+						display: none;
+					}
+				}
+			}
+
+			@include bp($max:650px){
+				.hero__text {
+					font-size: emCalc(24pt);
+					bottom: auto; top: 30%;
+				}
+				.hero-slider__cta {
+					font-size: emCalc(14pt);
+				}
+			}
+
+			@include bp($max:500px){
+				.hero__image {
+					background-position: 75%;
+					height: 190px;
 				}
 			}
 		}
