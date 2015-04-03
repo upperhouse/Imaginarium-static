@@ -47,7 +47,7 @@
 	}
 	.main-head__actions {
 		position: absolute;
-		right: 8px; top: 37%;
+		right: 8px; top: 33%;
 		width: 150px;
 	}
 	.main-head__social {
@@ -102,6 +102,85 @@
 			}
 			&.active {
 				opacity: 1;
+			}
+		}
+	}
+
+	.main-head__hero {
+		background: #ffffff;
+		.hero__inner {
+			padding: 0;
+		}
+		.hero-slider__slide {
+			position: relative;
+			.hero__text {
+				position: absolute;
+				bottom: 40%; right: 10%;
+				color: #ffffff;
+				font: {
+					size: emCalc(37pt);
+				}
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+			.hero-slider__cta {
+				background: $color-2;
+				color: #ffffff;
+				height: 75px;
+				padding: 15px $pad;
+				font: {
+					size: emCalc(16pt);
+				}
+				letter-spacing: 1px;
+				.cta__text {
+					@include col(9);
+					font-weight: 100;
+				}
+				.cta__btn {
+					width: 150px;
+					float: right;
+					margin-right: 50px;
+					background: $color-1;
+					line-height: 17px;
+					&:hover {
+						background: $color-3;
+						a {
+							color: #ffffff;
+							text-decoration: none;
+						}
+					}
+					a {
+						display: block;
+						padding:6px $pad;
+						width: 100%;
+						color: $color-3;
+						font: {
+							size: emCalc(16pt);
+							weight: bold;
+						}
+						&:after {
+							content: ">>";
+							color: #ffffff;
+							margin-left: 5px;
+							font: {
+								size: emCalc(15pt);
+								weight: 100;
+							}
+						}
+					}
+				}
+			}
+
+			@include bp($solarsystem){
+				.hero__text {
+					bottom: 55%;
+					right: 0;
+					left: 0;
+					text-align: center;
+				}
+				.hero-slider__cta {
+					height: 100px;
+				}
 			}
 		}
 	}

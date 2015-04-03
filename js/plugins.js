@@ -19,6 +19,12 @@
             console[method] = noop;
         }
     }
+
+
+    $('.flexslider').flexslider({
+        animation: "slide"
+    });
+
 }());
 
 // Place any jQuery/helper plugins in here.

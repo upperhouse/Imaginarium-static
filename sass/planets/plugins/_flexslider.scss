@@ -1,0 +1,68 @@
+/*------------------------------------*\
+    ::Default Flexslider styling
+\*------------------------------------*/
+.flexslider {
+	margin: 0;
+	border: none;
+
+	.flex-control-nav {
+		display: none;
+		bottom: 100px;
+		max-width: 100%;
+
+		@include bp($solarsystem) {
+			display: block;
+		}
+	}
+
+	&:hover {
+		.flex-direction-nav {
+			.flex-prev {
+				left: 35%;
+			}
+			.flex-next {
+				right: 35%;
+			}
+		}
+	}
+
+	.flex-control-paging {
+		li {
+			a {
+				background: $color-1;
+			}
+		}
+	}
+
+	.flex-direction-nav {
+		display: none;
+
+		.flex-prev {
+			left: 35%; top: 63%;
+			opacity: 1;
+			height: 20px;
+			width: 22px;
+			&:before {
+				content: "";
+				background: url('../images/global/flex-prev.png') no-repeat;
+				height: 20px;
+				width: 22px;
+			}
+		}
+		.flex-next {
+			right: 35%; top: 63%;
+			opacity: 1;
+			height: 20px;
+			width: 22px;
+			&:before {
+				content: "";
+				background: url('../images/global/flex-next.png') no-repeat;
+				height: 20px;
+				width: 22px;
+			}
+		}
+		@include bp($solarsystem){
+			display: block;
+		}
+	}
+}

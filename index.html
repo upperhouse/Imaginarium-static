@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/favicon.ico" type="image/x-icon" rel="icon" />
     <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
-    <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
+    <link rel="stylesheet" href="plugins/flexslider/flexslider.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -98,33 +97,43 @@
                     </div>
                 </div>
             </div>
+            <div class="main-head__hero">
+                <div class="hero__inner">
+                    <div class="hero-slider flexslider">
+                        <ul class="hero-slider__slides slides">
+                            <li class="hero-slider__slide">
+                                <div class="hero__image"><img src="images/home/hero.jpg" alt="" /></div>
+                                <div class="hero__text">Where Ideas Take Flight</div>
+                                <div class="hero-slider__cta">
+                                    <div class="cta__text"><b>So, how does this work?</b> It’s simple…you design it, prototype and test it, and if it works, bring it to life as a full-fledged pilot. Each of these stages is distinct, and we help you along the way.</div>
+                                    <div class="cta__btn"><a href="#" class="action">Become an Imaginator</a></div>
+                                </div>
+                            </li>
+                            <li class="hero-slider__slide">
+                                <div class="hero__image"><img src="images/home/hero.jpg" alt="" /></div>
+                                <div class="hero__text">Where Ideas Take Flight</div>
+                                <div class="hero-slider__cta">
+                                    <div class="cta__text">and then</div>
+                                    <div class="cta__btn"><a href="#" class="action">Become an Imaginator</a></div>
+                                </div>
+                            </li>
+                            <li class="hero-slider__slide">
+                                <div class="hero__image"><img src="images/home/hero.jpg" alt="" /></div>
+                                <div class="hero__text">Where Ideas Take Flight</div>
+                                <div class="hero-slider__cta">
+                                   <div class="cta__text">another slide</div>
+                                   <div class="cta__btn"><a href="#" class="action">Become an Imaginator</a></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- slides -->
+                    </div>
+                    <!-- slider -->                    
+                </div>
+            </div>
         </header>
         <section class="main-torso page-torso">
             <div class="main-torso__inner">
-                <div class="slider">
-                    <div class="slides">
-                        <section>
-                            <h1>Awesome business card design</h1>
-                            <p><b>So, how does this work?</b> It’s simple...you design it, prototype and test it, and if it works, bring it to life as a full-fledged pilot. Each of these stages is distinct, and we help you along the way</p>
-                            <a href="#" class="action">Become an Imaginator</a>
-                            <img src="images/slide1.png" alt="slide1-image">
-                        </section>
-                        <section>
-                            <h1>Awesome business card design</h1>
-                            <p><b>So, how does this work?</b> It’s simple...you design it, prototype and test it, and if it works, bring it to life as a full-fledged pilot. Each of these stages is distinct, and we help you along the way</p>
-                            <a href="#" class="action">Become an Imaginator</a>
-                            <img src="images/slide2.png" alt="slide2-image">
-                        </section>
-                        <section>
-                            <h1>Awesome business card design</h1>
-                            <p><b>So, how does this work?</b> It’s simple...you design it, prototype and test it, and if it works, bring it to life as a full-fledged pilot. Each of these stages is distinct, and we help you along the way</p>
-                            <a href="#" class="action">Become an Imaginator</a>
-                            <img src="images/slide3.png" alt="slide3-image">
-                        </section>
-                    </div>
-                    <!-- slides -->
-                </div>
-                <!-- slider -->
                 <div class="homemid">
                     <dl>
                         <dt>
@@ -218,6 +227,7 @@
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
+    <script type="text/javascript" src="plugins/flexslider/jquery.flexslider-min.js"></script>
     <script src="js/plugins.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
