@@ -79,4 +79,8 @@
 			background: url('../images/global/brain.png');
 		}
 	}
+
+	@include bp($max:950px){
+		padding-top: 10%;
+	}
 }

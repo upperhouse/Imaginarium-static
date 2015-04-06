@@ -5,13 +5,67 @@
 	@include col(12);
 	padding: 35px 0;
 
-	.content__block--one,
-	.content__block--two,
+	.content__block--two-one {
+		@include col(4);
+		&:first-of-type {
+			@include col(8);
+		}
+
+		@include bp($max:950px){
+			@include col(12);
+			padding: 25px 0;
+			&:first-of-type {
+				@include col(12);
+				padding: 25px 0;
+			}
+		}
+	}
+
+	.content__block--one-two {
+		@include col(8);
+		padding: 25px $pad;
+		&:first-of-type {
+			@include col(4);
+		}
+
+		@include bp($max:950px){
+			@include col(12);
+			padding: 25px 0;
+			&:first-of-type {
+				@include col(12);
+				padding: 25px 0;
+			}
+		}
+	}
+
 	.content__block--three {
 		@include col(4);
+		@include bp($max:950px){
+			display: inline-block;
+			vertical-align: middle;
+			width: 49%;
+			float: none;
+		}
+		@include bp($max:750px){
+			width: 100%;
+			padding: 25px 0;
+		}
 	}
 
 	.content__block--half {
 		@include col(6);
+
+		@include bp($max:900px) {
+			@include col(12);
+			padding: 25px 0;
+		}
+	}
+
+	@include bp($max:950px){
+		text-align: center;
+	}
+
+	@include bp($max:750px){
+		padding: 0;
 	}
 }
