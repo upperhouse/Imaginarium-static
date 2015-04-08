@@ -17,21 +17,42 @@ html, body {
 }
 
 h1, h2, h3 {
-	font-weight: normal;
 	
 	&.heading--blue {
 		color: $color-3;
 	}
+	&.heading--red {
+		color: #9b171a;
+	}
+	&.heading--yellow {
+		color: $color-1;
+	}
+	&.heading--green {
+		color: $color-2;
+	}
 }
 
 h1 {
-	font-size: emCalc(28pt);
+	font: {
+		size: emCalc(28pt);
+		weight: normal;
+	}
 	margin: 0.67em 0;
 	color: $color-2;
 }
 
 h2 {
-	font-size: emCalc(21pt);
+	font: {
+		size: emCalc(21pt);
+		weight: normal;
+	}
+}
+
+h3 {
+	font: {
+		size: emCalc(16pt);
+	}
+	margin-bottom: 5px;
 }
 
 abbr[title] {

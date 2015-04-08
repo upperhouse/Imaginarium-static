@@ -89,12 +89,22 @@
 		&:before {
 			background: $color-3;
 		}
+		&.circle__cta--small {
+			&:before {
+				background: none;
+			}
+		}
 	}
 
 	&.circle__cta--red {
 		background: #9b171a;
 		&:before {
 			background: #9b171a;
+		}
+		&.circle__cta--small {
+			&:before {
+				background: none;
+			}
 		}
 	}
 
@@ -103,12 +113,22 @@
 		&:before {
 			background: $color-1;
 		}
+		&.circle__cta--small {
+			&:before {
+				background: none;
+			}
+		}
 	}
 
 	&.circle__cta--green {
 		background: $color-2;
 		&:before {
 			background: $color-2;
+		}
+		&.circle__cta--small {
+			&:before {
+				background: none;
+			}
 		}
 	}
 

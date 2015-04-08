@@ -7,12 +7,16 @@
     }
     [class*="torso__sidebar"]{
         @include grid-column(4);
+        padding-top: 30px;
+        p {
+            margin-top: 5px;
+        }
     }
 
     @include bp($solarsystem){
 	    [class*="torso__content"], 
 	    [class*="torso__sidebar"]{
-	        @include grid-column(12);
+	        @include grid-column(12,$collapse:true);
 	    }
     }
 }

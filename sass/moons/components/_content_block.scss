@@ -22,4 +22,11 @@
 	div {
 		width: 77%;
 	}
+
+	@include bp($max:700px){
+		h2, div {
+			display: block;
+			width: 100%;
+		}
+	}
 }

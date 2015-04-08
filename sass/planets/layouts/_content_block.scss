@@ -43,7 +43,7 @@
 		@include bp($solarsystem){
 			display: inline-block;
 			vertical-align: middle;
-			width: 50%;
+			width: 49%;
 			float: none;
 		}
 		@include bp($max:900px){
@@ -63,6 +63,13 @@
 
 	@include bp($solarsystem){
 		text-align: center;
+		.content__block--two-one,
+		.content__block--one-two,
+		.content__block--three,
+		.content__block--full,
+		.content__block--half {
+			text-align: left;
+		}
 	}
 
 	@include bp($max:900px){
