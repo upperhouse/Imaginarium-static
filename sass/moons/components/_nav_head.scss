@@ -14,7 +14,7 @@
 		padding: 0;
 
 		> .menu-item {
-			width: 12.5%;
+			width: 15%;
 			text-align: center;
 			border-right: 1px solid $color-5;
 			a {
@@ -27,10 +27,10 @@
 				}
 			}
 			&:nth-child(3){
-				width: 19%;
-			}
-			&:nth-child(4){
 				width: 15%;
+			}
+			&:nth-child(5){
+				width: 18%;
 			}
 			&:last-of-type {
 				border-right: none;
@@ -104,13 +104,10 @@
 			> .menu-item {
 				width: 100%;
 				border-right: none;
-				&:nth-child(2){
-					position: relative;
-				}
 				&:nth-child(3){
 					width: 100%;
 				}
-				&:nth-child(4){
+				&:nth-child(5){
 					width: 100%;
 				}
 				&:hover {
