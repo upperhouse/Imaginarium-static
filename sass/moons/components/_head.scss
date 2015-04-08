@@ -187,7 +187,7 @@
 					text-align: center;
 				}
 				.hero-slider__cta {
-					height: 100px;
+					height: 150px;
 				}
 			}
 
@@ -195,6 +195,7 @@
 				.hero-slider__cta {
 					background: #ffffff;
 					color: $color-body;
+					height: 200px;
 					.cta__text {
 						@include col(12);
 						text-align: center;

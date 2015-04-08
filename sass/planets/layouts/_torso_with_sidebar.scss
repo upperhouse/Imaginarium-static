@@ -8,4 +8,11 @@
     [class*="torso__sidebar"]{
         @include grid-column(4);
     }
+
+    @include bp($solarsystem){
+	    [class*="torso__content"], 
+	    [class*="torso__sidebar"]{
+	        @include grid-column(12);
+	    }
+    }
 }

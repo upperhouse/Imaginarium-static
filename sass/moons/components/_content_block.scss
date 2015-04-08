@@ -4,3 +4,22 @@
 .content__block--underline {
 	border-bottom: 2px dotted $color-5;
 }
+
+.content__cta {
+	@include col(11,$center:true);
+	background: rgba($color-3,.15);
+	color: $color-3;
+	padding: 15px;
+	margin-bottom: 20px;
+
+	h2, div {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	h2 {
+		width: 22%;
+	}
+	div {
+		width: 77%;
+	}
+}
