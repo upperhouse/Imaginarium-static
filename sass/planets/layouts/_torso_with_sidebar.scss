@@ -19,4 +19,10 @@
 	        @include grid-column(12,$collapse:true);
 	    }
     }
+
+    @include bp($planetary){
+        [class*="torso__sidebar"]{
+            overflow:hidden;
+        }
+    }
 }

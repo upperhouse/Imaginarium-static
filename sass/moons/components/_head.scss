@@ -95,11 +95,13 @@
 			top: 90%;
 			width: 225px;
 			transition: opacity 400ms;
+			z-index: -10;
 			input {
 				width: 100%;
 			}
 			&.active {
 				opacity: 1;
+				z-index: 100;
 			}
 		}
 	}
