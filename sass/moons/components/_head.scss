@@ -22,10 +22,11 @@
 			overflow: hidden;
 			background: $color-1;
 			content: "";
-			transform: translateZ(1px) rotate(-1.5deg);
+			transform: translateZ(0px) rotate(-1.5deg);
 			outline: 1px solid transparent;
 			z-index: -1;
 			box-shadow: 0 4px 2px -2px rgba(121, 108, 108, 0.5);
+			outline: 1px solid transparent;
 		}
 
 		@include bp($max:1080px){
@@ -218,7 +219,7 @@
 				.hero-slider__cta {
 					background: #ffffff;
 					color: $color-body;
-					height: 200px;
+					height: 225px;
 					.cta__text {
 						@include col(12);
 						text-align: center;

@@ -14,8 +14,12 @@
 			display: block;
 		}
 
+		@include bp($max:850px){
+			top: 47%;
+		}
+
 		@include bp($max:500px){
-			top: 42%;
+			top: 40%;
 		}
 	}
 
@@ -69,10 +73,17 @@
 			display: block;
 		}
 
+		@include bp($max:850px){
+			.flex-prev,
+			.flex-next {
+				top: 50%;
+			}
+		}
+
 		@include bp($max:500px){
 			.flex-prev,
 			.flex-next {
-				top: 45%;
+				top: 44%;
 			}
 			.flex-prev {
 				left: 15%;

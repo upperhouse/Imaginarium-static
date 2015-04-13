@@ -4,6 +4,7 @@
 
 .dzscalendar {
 	height: 225px !important;
+	border: 1px solid #636363;
 	.calendar-controls {
 		background: $color-2;
 		color: $white;
@@ -47,6 +48,10 @@
 			}
 		}
 	}
+}
+
+.dzscalendar-con.skin-responsive-galileo {
+	box-shadow: none;
 }
 
 #calendar {

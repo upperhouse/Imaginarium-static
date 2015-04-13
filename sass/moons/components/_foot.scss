@@ -94,6 +94,12 @@
 						@include bp($planetary){
 							width: 25%;
 							margin-right: 0;
+							a {
+								&:before {
+									left: 50%;
+									margin-left: -15px;
+								}
+							}
 						}
 					}
 				}
