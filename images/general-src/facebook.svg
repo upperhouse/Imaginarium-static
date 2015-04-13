@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000"><defs><path id="a" d="M27 29.6h943.4V973H27z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><path clip-path="url(#b)" d="M498.7 973c260.5 0 471.7-211.2 471.7-471.7 0-260.6-211.2-471.8-471.7-471.8C238.2 29.6 27 240.8 27 501.3S238.2 973 498.7 973"/><path clip-path="url(#b)" fill="#FFF" d="M526.9 311.8h118.6V165H526.9c-98 0-177.8 86.4-177.8 192.6v74.1H230.6V579h118.6v254.8h148.2V579h148.1V431.8H497.3v-75.5c0-25.5 15.7-44.5 29.6-44.5"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+<path d="M381.6,999.5V530.1H257.5v-169h124.1c0,0,0-69.2,0-144.3c0-113.4,73.3-217.6,242.2-217.6
+	c68.4,0,119,6.6,119,6.6l-4,157.8c0,0-51.6-0.5-107.9-0.5c-60.9,0-70.7,28.1-70.7,74.7c0,36.8,0-78.5,0,123.4h183.4l-8,169H560.2
+	v469.3H381.6z"/>
+</svg>
