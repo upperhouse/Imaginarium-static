@@ -4,28 +4,31 @@
     ::Normalize.css v3.0.0 | MIT License | git.io/normalize
 \*------------------------------------*/
 html {
-	font-family: sans-serif;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
+
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
+
 body {
-	margin: 0;
+  margin: 0;
 }
+
 *, *:before, *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .main-torso {
-	position: relative;
-	z-index:5;
-	background: #ffffff;
-	margin-top: 25px;
+  position: relative;
+  z-index: 5;
+  background: #ffffff;
+  margin-top: 25px;
 }
 
 .hide {
-	display: none;
+  display: none;
 }

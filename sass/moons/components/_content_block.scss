@@ -2,31 +2,200 @@
     :: Content Block
 \*------------------------------------*/
 .content__block--underline {
-	border-bottom: 2px dotted $color-5;
+  border-bottom: 2px dotted $color-5;
+  &.staff {
+    border-bottom: none;
+  }
 }
 
 .content__cta {
-	@include col(11,$center:true);
-	background: rgba($color-3,.15);
-	color: $color-3;
-	padding: 15px;
-	margin-bottom: 20px;
+  @include col(11, $center: true);
+  background: rgba($color-3, 0.15);
+  color: $color-3;
+  padding: 15px;
+  margin-bottom: 20px;
+  h2, div, p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  h2 {
+    width: 22%;
+  }
+  p {
+    width: 77%;
+  }
+  a {
+    color: $color-4;
+  }
+  @include bp($max: 700px) {
+    h2, div {
+      display: block;
+      width: 100%;
+    }
+  }
+}
 
-	h2, div {
-		display: inline-block;
-		vertical-align: middle;
-	}
-	h2 {
-		width: 22%;
-	}
-	div {
-		width: 77%;
-	}
+.staffgrid {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      @include col(3, $center: false, $collapse: true);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      border-right: 1px dashed #939598;
+      border-bottom: 1px dashed #939598;
+      border-radius: 0px;
+      &:nth-child(4) {
+        border-right: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      .staffblock {
+        padding: 10px;
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        height: 330px;
+        img {
+          width: 200px;
+          border-radius: 500px;
+        }
+        h3 {
+          font-size: 0.8rem;
+        }
+        p {
+          font-size: 0.8rem;
+          line-height: 1.1rem;
+        }
+        a {
+          font-weight: bold;
+          color: $color-1;
+        }
+        a:hover {
+          color: $color-2;
+        }
+        .staffdesc {
+          display: none;
+        }
+      }
+    }
+    @include bp($max: 700px) {
+      li {
+        @include col(5, $center: false, $collapse: true);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border-right: 1px dashed #939598;
+        border-bottom: 1px dashed #939598;
+        border-radius: 0px;
+        float: left;
+        &:nth-child(even) {
+          border-right: none;
+        }
+        .staffblock {
+          padding: 10px;
+          img {
+            width: 200px;
+          }
+          h3 {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
 
-	@include bp($max:700px){
-		h2, div {
-			display: block;
-			width: 100%;
-		}
-	}
+    @include bp($max: 500px) {
+      li {
+        @include col(10, $center: false, $collapse: true);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px dashed #939598;
+        border-radius: 0px;
+        .staffblock {
+          padding: 10px;
+          img {
+            width: 200px;
+          }
+          h3 {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.pagination {
+  display: block;
+  min-height: 1.5rem;
+  margin-left: -0.3125rem;
+  margin-bottom: 0;
+  li {
+    height: 1.5rem;
+    color: #222;
+    font-size: 0.875rem;
+    margin-left: 0.3125rem;
+    float: left;
+    display: block;
+    a, button {
+      display: block;
+      padding: 0.0625rem 0.625rem 0.0625rem;
+      color: #999;
+      background: none;
+      border-radius: 3px;
+      font-weight: normal;
+      font-size: 1em;
+      line-height: inherit;
+      transition: background-color 300ms ease-out;
+    }
+    &:hover a, & a:focus, &:hover button, & button:focus, &.active a {
+      background: #e6e6e6;
+    }
+    &.unavailable a,
+    &.unavailable button {
+      cursor: default;
+      color: #999;
+    }
+    &.unavailable:hover a,
+    &.unavailable a:focus,
+    &.unavailable:hover button,
+    &.unavailable button:focus {
+      background: transparent;
+    }
+    &.current a,
+    &.current button {
+      background: #008cba;
+      color: #fff;
+      font-weight: bold;
+      cursor: default;
+    }
+    &.current a:hover,
+    &.current a:focus,
+    &.current button:hover,
+    &.current button:focus {
+      background: #008cba;
+    }
+  }
+}
+
+.pagination-centered {
+  text-align: center;
+  ul.pagination li {
+    float: none;
+    display: inline-block;
+  }
+}
+
+.resultrun {
+  a {
+    color: #00A44B;
+  }
 }

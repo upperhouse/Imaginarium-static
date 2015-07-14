@@ -4,14 +4,19 @@
     ::Normalize.css v3.0.0 | MIT License | git.io/normalize
 \*------------------------------------*/
 a {
-	background: transparent;
-	text-decoration: none;
+  background: transparent;
+  text-decoration: none;
+  color: #1A5FAA;
+  &:hover {
+    color: #9B171A;
+  }
 }
+
 a:active,
 a:hover {
-	outline: 0;
+  outline: 0;
 }
 
 .btn {
-	@extend %btn;
+  @extend %btn;
 }

@@ -3,69 +3,70 @@
 \*------------------------------------*/
 
 .dzscalendar {
-	height: 225px !important;
-	border: 1px solid #636363;
-	.calendar-controls {
-		background: $color-2;
-		color: $white;
-		.curr-year {
-			color: $white;
-		}
-	}
-	.theMonths {
-		height: 200px;
-		width: auto;
-	}
-
-	.main-mon {
-		.week-day {
-			&.tag-important {
-				background-color: $color-1;
-			}
-			&.tag-red {
-				background-color: #9b171a;
-			}
-			&.tag-blue {
-				background-color: $color-3;
-			}
-		}
-	}
-
-	&.hasEvent {
-		background-color: $color-1;
-	}
-
-	@include bp($planetary) {
-		.dzstooltip {
-			left: 0 !important;
-			right: 0;
-			top: 100% !important;
-			&:before {
-				border: none;
-			}
-			div {
-				width: 100% !important;
-			}
-		}
-	}
+  height: 225px !important;
+  border: 1px solid #636363;
+  .calendar-controls {
+    background: $color-2;
+    color: $white;
+    .curr-year {
+      color: $white;
+    }
+  }
+  .theMonths {
+    height: 200px;
+    width: auto;
+  }
+  .main-mon {
+    .week-day {
+      &.tag-important {
+        background-color: $color-1;
+      }
+      &.tag-red {
+        background-color: #9b171a;
+      }
+      &.tag-blue {
+        background-color: $color-3;
+      }
+    }
+  }
+  &.hasEvent {
+    background-color: $color-1;
+  }
+  @include bp($planetary) {
+    .dzstooltip {
+      left: 0 !important;
+      right: 0;
+      top: 100% !important;
+      &:before {
+        border: none;
+      }
+      div {
+        width: 100% !important;
+      }
+    }
+  }
 }
 
 .dzscalendar-con.skin-responsive-galileo {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 #calendar {
-	margin: 25px 0 50px 0;
+  margin: 25px 0 50px 0;
+}
+
+.eventcontent {
+  display: none;
 }
 
 .fc-unthemed {
-	.fc-today {
-		background: $color-1 !important;
-		color: $white;
-	}
+  .fc-today {
+    background: $color-1 !important;
+    color: $white;
+  }
 }
 
 .fc-event {
-	background-color: $color-3 !important;
-	border: 1px solid $color-3 !important;
+  background-color: $color-3 !important;
+  border: 1px solid $color-3 !important;
 }

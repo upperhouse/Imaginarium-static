@@ -11,7 +11,7 @@
     <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <link rel="stylesheet" href="plugins/flexslider/flexslider.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/vendors/svg4everybody.min.js"></script>
+    <script src="js/vendor/svg4everybody.min.js"></script>
 </head>
 
 <body>
@@ -23,77 +23,114 @@
         <header class="main-head">
             <div class="main-head__angler"></div>
             <div class="main-head__inner">
-                <a href="index.html" class="main-head__logo">
-                    <img src="images/global/logo.png" alt="Imaginarium" />
+                <a href="/" class="main-head__logo">
+                    <img src="/images/global/logo.png" alt="Imaginarium" />
                 </a>
                 <div class="main-head__nav">
                     <nav class="head-nav">
                         <ul class="menu">
-                            <li class="menu-item">
-                                <a href="index.html">Home</a>
+                            <li class="menu-item"><a href="/secondary.html">About</a>
+                                <ul class="sub-menu"><a href="/about/our-process" ">Our Process</a><a href="/about/our-team "">Our Team</a>
+                                </ul>
                             </li>
-                            <li class="menu-item">
-                                <a href="secondary.html">About</a>
-                                <!-- <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="#">About the Imaginarium</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="#">People</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="#">Processes</a>
-                                    </li>
-                                </ul> -->
+                            <li class="menu-item"><a href="/programs.html">Programs</a>
+                                <ul class="sub-menu"><a href="/programs/artsapp" ">Competency-based Arts</a><a href="/programs/codecampapp "">iSquad Camp</a><a href="/programs/plsdapp" ">PLSD</a><a href="/programs/redddiapp "">REDDI 2.0</a><a href="/programs/summerlab" ">Summer Lab</a></ul> </li><li class="menu-item "><a href="/schools ">Schools</a></li><li class="menu-item "><a href="/events.html">Events</a><ul class="sub-menu "><a href="/eventitems/terst-two "">terst two</a>
+                                </ul>
                             </li>
-                            <li class="menu-item">
-                                <a href="#">Programs</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="events.html">Events</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">Community</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">Contact</a>
-                            </li>
+                            <li class="menu-item"><a href="/community.html">Community</a></li>
+                            <li class="menu-item"><a href="/contact.html">Contact</a></li>
+                            <li class="menu-item"><a href="/peers.html">Peers</a></li>
+                            <select name="language" id="langpicker">
+                                <option value="eng" selected="selected">English</option>
+                                <option value="spa">Spanish</option>
+                                <option value="viet">Vietnamese</option>
+                                <option value="arab">Arabic</option>
+                                <option value="nepali">Nepali</option>
+                                <option value="rus">Russian</option>
+                                <option value="burm">Burmese</option>
+                                <option value="amharic">Amharic</option>
+                                <option value="somal">Somali</option>
+                                <option value="fra">French</option>
+                            </select>
                             <li class="menu-item__mobile">
-                                <a href="http://www.facebook.com" target="_blank"><svg class="icon"><use xlink:href="#facebook"></use></svg></a>
-                                <a href="http://www.twitter.com" target="_blank"><svg class="icon"><use xlink:href="#twitter"></use></svg></a>
-                                <a href="http://www.instagram.com" target="_blank"><svg class="icon"><use xlink:href="#instagram"></use></svg></a>
-                                <a href="http://plus.google.com" target="_blank"><svg class="icon"><use xlink:href="#googleplus"></use></svg></a>
+                                <a href="https://www.facebook.com/imaginarium.dps" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#facebook"></use>
+                                    </svg>
+                                </a>
+                                <a href="http://www.twitter.com/imaginariumdps" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#twitter"></use>
+                                    </svg>
+                                </a>
+                                <a href="http://instagram.com/imaginariumdps" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://plus.google.com/105332758210236431280" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#googleplus"></use>
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
                     </nav>
                 </div>
+                <div class="main-head_login">
+                    <ul>
+                        <li>
+                            <a href="/users/login">Login</a> </li>
+                        <li>
+                            |
+                        </li>
+                        <li>
+                            <a href="/users/register">Register account</a> </li>
+                    </ul>
+                </div>
                 <div class="main-head__actions">
                     <div class="main-head__mobile-menu">
-                        <img src="images/global/m-nav.png" alt="" />
+                        <img src="/images/global/m-nav.png" alt="" />
                     </div>
                     <div class="main-head__social">
                         <ul>
                             <li>
-                                <a href="http://www.facebook.com" target="_blank"><svg class="icon"><use xlink:href="#facebook"></use></svg></a>
+                                <a href="https://www.facebook.com/imaginarium.dps" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#facebook"></use>
+                                    </svg>
+                                </a>
                             </li>
                             <li>
-                                <a href="http://www.twitter.com" target="_blank"><svg class="icon"><use xlink:href="#twitter"></use></svg></a>
+                                <a href="http://www.twitter.com/imaginariumdps" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#twitter"></use>
+                                    </svg>
+                                </a>
                             </li>
                             <li>
-                                <a href="http://www.instagram.com" target="_blank"><svg class="icon"><use xlink:href="#instagram"></use></svg></a>
+                                <a href="http://instagram.com/imaginariumdps" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
                             </li>
                             <li>
-                                <a href="http://plus.google.com" target="_blank"><svg class="icon"><use xlink:href="#googleplus"></use></svg></a>
+                                <a href="https://plus.google.com/105332758210236431280" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#googleplus"></use>
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
                     </div>
                     <div class="main-head__search">
                         <div id="PageSearchFormButton"></div>
-                        <form id="PageSearchForm" accept-charset="utf-8" method="post" action="/search">
+                        <form id="PageSearchForm" accept-charset="utf-8" method="get" action="/search">
                             <div class="input text">
-                                <input name="data[searchterms]" class="searchinput" type="text" id="searchterms" placeholder="search" />
+                                <input name="q" class="searchinput" type="text" id="searchterms" />
                             </div>
-                            <input class="btn" type="submit" />
+                            <input class="btn" type="submit" value="Search" />
                         </form>
                     </div>
                 </div>
@@ -103,25 +140,39 @@
                     <div class="hero-slider flexslider">
                         <ul class="hero-slider__slides slides">
                             <li class="hero-slider__slide">
-                                <div class="hero__image" style="background-image:url('images/home/hero.jpg');"></div>
-                                <div class="hero__text">Where Ideas Take Flight</div>
+                                <div class="hero__image" style="background-image:url('/files/banners/photo/906ed7de-56b0-4402-88d2-d7ca3471ad2b/banner9.jpg');"></div>
+                                <div class="hero__text"></div>
                                 <div class="hero-slider__cta">
-                                    <div class="cta__text"><strong>So, how does this work?</strong> It’s simple…you design it, prototype and test it, and if it works, bring it to life as a full-fledged pilot. Each of these stages is distinct, and we help you along the way.</div>
-                                    <div class="cta__btn"><a href="#" class="action">Become an Imaginator</a></div>
+                                    <div class="cta__text">
+                                        <p><strong>Where Students Discover</strong>. We&#39;re excited to help teams re-design their schools with a focus on creating personalized learning paths for students. Teams will prototype and rethink time, space, technology and the role of the teacher. Join our Fall cohort for personalized learning school design.</p>
+                                    </div>
+                                    <div class="cta__btn"><a href="/apply" class="action">See Our Programs</a></div>
                                 </div>
                             </li>
                             <li class="hero-slider__slide">
-                                <div class="hero__image" style="background-image:url('images/home/hero2.jpg');"></div>
-                                <div class="hero__text">Where Ideas Take Flight</div>
+                                <div class="hero__image" style="background-image:url('/files/banners/photo/9acc57c4-1324-44a2-98d3-afb7bdf5db55/Imaginarium-Web-Banners_1131x220-5.jpg');"></div>
+                                <div class="hero__text"></div>
                                 <div class="hero-slider__cta">
-                                    <div class="cta__text"><strong>So, how does this work?</strong> It’s simple…you design it, prototype and test it, and if it works, bring it to life as a full-fledged pilot. Each of these stages is distinct, and we help you along the way.</div>
-                                    <div class="cta__btn"><a href="#" class="action">Become an Imaginator</a></div>
+                                    <div class="cta__text">
+                                        <p><span style="font-size:14px"><strong>What educational problem do you want to solve?</strong> </span>June 10th Pitch your idea at the Design Challenge. Win $20,000 in seed funding to build and test your idea! RSVP NOW. Everyone is welcome to attend: DPS students, teachers, families, and community leaders.</p>
+                                    </div>
+                                    <div class="cta__btn"><a href="http://bit.ly/techequityedu" class="action">Register Now!</a></div>
+                                </div>
+                            </li>
+                            <li class="hero-slider__slide">
+                                <div class="hero__image" style="background-image:url('/files/banners/photo/2b657775-da25-4dab-8ed9-816459be1297/Imaginarium-Web-Banners_1131x220-1.jpg');"></div>
+                                <div class="hero__text"></div>
+                                <div class="hero-slider__cta">
+                                    <div class="cta__text">
+                                        <p><strong>Where Ideas Take Flight.&nbsp;</strong>Some see a problem. You see an opportunity. Why? Because you are a change maker. Or, in our lingo, you are an IMAGINATOR. Whether it&rsquo;s a thought in mind, a piece of napkin art, or a five-page plan, your idea deserves space, time and room to grow. So, bring it to the imaginarium, where ideas take flight.&nbsp;</p>
+                                    </div>
+                                    <div class="cta__btn"><a href="/apply" class="action">Apply Today</a></div>
                                 </div>
                             </li>
                         </ul>
                         <!-- slides -->
                     </div>
-                    <!-- slider -->                    
+                    <!-- slider -->
                 </div>
             </div>
         </header>
@@ -228,6 +279,7 @@
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
     <script type="text/javascript" src="plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="js/vendor/masonry.pkgd.min.js"></script>
     <script src="js/plugins.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

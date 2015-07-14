@@ -2,108 +2,104 @@
     ::Default Flexslider styling
 \*------------------------------------*/
 .flexslider {
-	margin: 0;
-	border: none;
+  margin: 0;
+  border: none;
+  .flex-control-nav {
+    display: block;
+    bottom: auto;
+    top: 67%;
+    max-width: 100%;
+    @include bp($solarsystem) {
+      display: block;
+    }
 
-	.flex-control-nav {
-		display: none;
-		bottom: auto; top: 50%;
-		max-width: 100%;
+    @include bp($max: 850px) {
+      top: 47%;
+    }
 
-		@include bp($solarsystem) {
-			display: block;
-		}
+    @include bp($max: 500px) {
+      top: 40%;
+    }
+  }
+  &:hover {
+    .flex-direction-nav {
+      .flex-prev {
+        left: 35%;
+      }
+      .flex-next {
+        right: 35%;
+      }
+    }
+  }
+  .flex-control-paging {
+    li {
+      a {
+        background: $color-1;
+      }
+    }
+  }
+  .flex-direction-nav {
+    display: block;
+    .flex-prev {
+      left: 35%;
+      top: 72%;
+      opacity: 1;
+      height: 20px;
+      width: 22px;
+      &:before {
+        content: "";
+        background: url("../images/global/flex-prev.png") no-repeat;
+        height: 20px;
+        width: 22px;
+      }
+    }
+    .flex-next {
+      right: 35%;
+      top: 72%;
+      opacity: 1;
+      height: 20px;
+      width: 22px;
+      &:before {
+        content: "";
+        background: url("../images/global/flex-next.png") no-repeat;
+        height: 20px;
+        width: 22px;
+      }
+    }
+    @include bp($solarsystem) {
+      display: block;
+    }
 
-		@include bp($max:850px){
-			top: 47%;
-		}
+    @include bp($max: 850px) {
+      .flex-prev,
+      .flex-next {
+        top: 50%;
+      }
+    }
 
-		@include bp($max:500px){
-			top: 40%;
-		}
-	}
-
-	&:hover {
-		.flex-direction-nav {
-			.flex-prev {
-				left: 35%;
-			}
-			.flex-next {
-				right: 35%;
-			}
-		}
-	}
-
-	.flex-control-paging {
-		li {
-			a {
-				background: $color-1;
-			}
-		}
-	}
-
-	.flex-direction-nav {
-		display: none;
-
-		.flex-prev {
-			left: 35%; top: 53%;
-			opacity: 1;
-			height: 20px;
-			width: 22px;
-			&:before {
-				content: "";
-				background: url('../images/global/flex-prev.png') no-repeat;
-				height: 20px;
-				width: 22px;
-			}
-		}
-		.flex-next {
-			right: 35%; top: 53%;
-			opacity: 1;
-			height: 20px;
-			width: 22px;
-			&:before {
-				content: "";
-				background: url('../images/global/flex-next.png') no-repeat;
-				height: 20px;
-				width: 22px;
-			}
-		}
-		@include bp($solarsystem){
-			display: block;
-		}
-
-		@include bp($max:850px){
-			.flex-prev,
-			.flex-next {
-				top: 50%;
-			}
-		}
-
-		@include bp($max:500px){
-			.flex-prev,
-			.flex-next {
-				top: 44%;
-			}
-			.flex-prev {
-				left: 15%;
-			}
-			.flex-next {
-				right: 15%;
-			}
-		}
-	}
-
-	@include bp($max:500px){
-		&:hover {
-			.flex-direction-nav {
-				.flex-prev {
-					left: 15%;
-				}
-				.flex-next {
-					right: 15%;
-				}
-			}
-		}
-	}
+    @include bp($max: 500px) {
+      .flex-prev,
+      .flex-next {
+        top: 44%;
+      }
+      .flex-prev {
+        left: 15%;
+      }
+      .flex-next {
+        right: 15%;
+      }
+    }
+  }
+  @include bp($max: 500px) {
+    &:hover {
+      .flex-direction-nav {
+        .flex-prev {
+          left: 15%;
+        }
+        .flex-next {
+          right: 15%;
+        }
+      }
+    }
+  }
 }

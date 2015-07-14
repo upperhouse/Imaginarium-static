@@ -2,185 +2,179 @@
     :: Circle CTAs
 \*------------------------------------*/
 .circle__cta {
-	display: block;
-	position: relative;
-	border-radius: 100%;
-	color: #ffffff;
-	margin-top: 25px;
-	text-align: center;
-	a {
-		display: block;
-		color: #ffffff;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	h2 {
-		width: 75%;
-		margin: 5px auto;
-		letter-spacing: 1px;
-	}
-	p {
-		margin: 0;
-		max-height: 150px;
-		overflow: hidden;
-	}
-	&:after {
-		content: "";
-		position:absolute;
-		height: 100px;
-		width: 100px;
-		bottom: -40px; left: 50%;
-		margin-left: -50px;
-	}
-	.circle__cta--btn {
-		display: block;
-		margin-top: 3px;
-		color: $color-1;
-		font: {
-			size: emCalc(17pt);
-			weight: bold;
-		}
-		letter-spacing: 1px;
-		width: 100%;
-		&:after {
-			content: ">>";
-			color: #ffffff;
-			margin-left: 5px;
-			font: {
-				size: emCalc(15pt);
-				weight: 100;
-			}
-		}
-	}
+  display: block;
+  position: relative;
+  border-radius: 100%;
+  color: #ffffff;
+  margin-top: 25px;
+  text-align: center;
+  a {
+    display: block;
+    color: #ffffff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  h2 {
+    width: 75%;
+    margin: 5px auto;
+    letter-spacing: 1px;
+  }
+  p {
+    margin: 0;
+    max-height: 150px;
+    overflow: hidden;
+    font-size: emCalc(14pt);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: -40px;
+    left: 50%;
+    margin-left: -50px;
+  }
+  .circle__cta--btn {
+    display: block;
+    margin-top: 3px;
+    color: $color-1;
+    font: {
+      size: emCalc(17pt);
+      weight: bold;
+    };
+    letter-spacing: 1px;
+    width: 100%;
+    &:after {
+      content: ">>";
+      color: #ffffff;
+      margin-left: 5px;
+      font: {
+        size: emCalc(15pt);
+        weight: 100;
+      };
+    }
+  }
+  &.circle__cta--large {
+    height: 350px;
+    padding: 8%;
+    font: {
+      size: emCalc(16pt);
+      weight: 100;
+    };
+  }
+  &.circle__cta--small {
+    height: 200px;
+    font: {
+      size: emCalc(18pt);
+      weight: 100;
+    };
+    padding: 8%;
+    &:before {
+      content: "";
+      width: 1px;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      width: 99%;
+    }
+  }
+  &.circle__cta--blue {
+    background: $color-3;
+    &:before {
+      background: $color-3;
+    }
+    &.circle__cta--small {
+      &:before {
+        background: none;
+      }
+    }
+  }
+  &.circle__cta--red {
+    background: #9b171a;
+    &:before {
+      background: #9b171a;
+    }
+    &.circle__cta--small {
+      &:before {
+        background: none;
+      }
+    }
+  }
+  &.circle__cta--yellow {
+    background: $color-1;
+    &:before {
+      background: $color-1;
+    }
+    &.circle__cta--small {
+      &:before {
+        background: none;
+      }
+    }
+  }
+  &.circle__cta--green {
+    background: $color-2;
+    &:before {
+      background: $color-2;
+    }
+    &.circle__cta--small {
+      &:before {
+        background: none;
+      }
+    }
+  }
+  &.circle__cta--ship {
+    &:after {
+      background: url("../images/global/ship.png");
+    }
+  }
+  &.circle__cta--brain {
+    &:after {
+      background: url("../images/global/brain.png");
+    }
+  }
+  @include bp($solarsystem) {
+    &.circle__cta--large {
+      width: 100%;
+      border-radius: 0;
+      padding-top: 16%;
+      height: 300px;
+      &:after {
+        bottom: auto;
+        top: -40px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        height: 125px;
+        width: 125px;
+        bottom: -40px;
+        left: 50%;
+        margin-left: -63px;
+        border-radius: 100%;
+      }
+    }
+    &.circle__cta--small {
+      width: 200px;
+      padding: 3%;
+      margin: 0 auto;
+    }
+  }
 
-	&.circle__cta--large {
-		height: 350px;
-		padding: 8%;
-		font: {
-			size: emCalc(16pt);
-			weight: 100;
-		}
-	}
+  @include bp($max: 900px) {
+    &.circle__cta--large {
+      padding-top: 80px;
+    }
+  }
 
-	&.circle__cta--small {
-		height: 200px;
-		font: {
-			size: emCalc(18pt);
-			weight: 100;
-		}
-		padding: 8%;
-		&:before {	
-			content: "";
-			width: 1px;
-			height: 100%;
-			display: inline-block;
-			vertical-align: middle;
-		}
-		p {
-			display: inline-block;
-			vertical-align: middle;
-			width: 99%;
-		}
-	}
-
-	&.circle__cta--blue {
-		background: $color-3;
-		&:before {
-			background: $color-3;
-		}
-		&.circle__cta--small {
-			&:before {
-				background: none;
-			}
-		}
-	}
-
-	&.circle__cta--red {
-		background: #9b171a;
-		&:before {
-			background: #9b171a;
-		}
-		&.circle__cta--small {
-			&:before {
-				background: none;
-			}
-		}
-	}
-
-	&.circle__cta--yellow {
-		background: $color-1;
-		&:before {
-			background: $color-1;
-		}
-		&.circle__cta--small {
-			&:before {
-				background: none;
-			}
-		}
-	}
-
-	&.circle__cta--green {
-		background: $color-2;
-		&:before {
-			background: $color-2;
-		}
-		&.circle__cta--small {
-			&:before {
-				background: none;
-			}
-		}
-	}
-
-	&.circle__cta--ship {
-		&:after {
-			background: url('../images/global/ship.png');
-		}
-	}
-
-	&.circle__cta--brain {
-		&:after {
-			background: url('../images/global/brain.png');
-		}
-	}
-
-	@include bp($solarsystem){
-		&.circle__cta--large {
-			width: 100%;
-			border-radius: 0;
-			padding-top: 16%;
-			height:300px;
-			&:after {
-				bottom: auto;
-				top: -40px;
-			}
-			&:before {
-				content: "";
-				position: absolute;
-				top: -50px;
-				height: 125px;
-				width: 125px;
-				bottom: -40px; left: 50%;
-				margin-left: -63px;
-				border-radius: 100%;
-			}
-		}
-		&.circle__cta--small {
-			width: 200px;
-			padding: 3%;
-			margin: 0 auto;
-		}
-	}
-
-	@include bp($max:900px){
-		&.circle__cta--large {
-			padding-top: 80px;
-		}
-	}
-
-	@include bp($planetary){
-		&.circle__cta--large {
-			height: 350px;
-		}
-	}
+  @include bp($planetary) {
+    &.circle__cta--large {
+      height: 350px;
+    }
+  }
 }

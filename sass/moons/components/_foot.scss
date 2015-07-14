@@ -1,144 +1,152 @@
 /*------------------------------------*\
     ::Footer
 \*------------------------------------*/
-@include sticky-footer(
-    $wrap: '.wrap-all-the-things',
-    $row:  '.main-head, .main-torso, .main-foot',
-    $flex: '.main-torso'
-);
+@include sticky-footer($wrap: ".wrap-all-the-things", $row: ".main-head, .main-torso, .main-foot", $flex: ".main-torso");
 
 .main-foot {
-	background: $color-5;
-	.main-foot__inner {
-		padding: 25px $pad;
-		.main-foot__left {
-			width: 71%;
-			float: left;
-			.logos {
-				a {
-					display: inline-block;
-					vertical-align: middle;
-					max-width: 150px;
-					margin-right: 10px;
-					text-align: center;
-					img {
-						max-width: 100%;
-					}
+  background: $color-5;
+  .main-foot__inner {
+    padding: 25px $pad;
+    .main-foot__left {
+      width: 71%;
+      float: left;
+      .logos {
+        a {
+          display: inline-block;
+          vertical-align: middle;
+          max-width: 150px;
+          margin-right: 10px;
+          text-align: center;
+          img {
+            max-width: 100%;
+          }
+          @include bp($planetary) {
+            display: block;
+            float: left;
+            max-width: 47%;
+            margin-right: 5px;
+            margin-left: 5px;
+          }
+        }
+      }
+      @include bp($max: 950px) {
+        width: 100%;
+        padding: 25px 0;
+      }
+    }
+    .main-foot__right {
+      width: 25%;
+      float: right;
+      h1 {
+        text-transform: uppercase;
+        margin: 0 0 5px 0;
+      }
+      .signupform {
+        position: relative;
+        input[type="text"], input[type="email"] {
+          margin: 0 0 5px 0;
+        }
+        .footermg {
+          position: absolute;
+          bottom: 0px;
+          left: 110px;
+          font-size: emCalc(12pt);
+          font-weight: bold;
+        }
+        .footload {
+          margin-bottom: -10px;
+        }
+      }
+      .main-foot__social {
+        border-top: 2px dotted #939597;
+        padding-top: 15px;
+        margin-top: 20px;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          li {
+            float: left;
+            margin-right: 15px;
+            width: 20px;
+            a {
+              display: block;
+              height: 30px;
+              position: relative;
+              z-index: 5;
+              &:before {
+                content: "";
+                border-radius: 100%;
+                background: $color-3;
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                z-index: -1;
+                top: -5px;
+                left: -5px;
+              }
+            }
+            svg {
+              max-width: 20px;
+              max-height: 20px;
+              width: 20px;
+              height: 20px;
+              padding: 1px;
+              fill: $white;
+            }
+            &:hover {
+              a {
+                &:before {
+                  background: $color-2;
+                }
+              }
+            }
+            @include bp($planetary) {
+              width: 25%;
+              margin-right: 0;
+              a {
+                &:before {
+                  left: 50%;
+                  margin-left: -15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      @include bp($max: 950px) {
+        float: left;
+        width: 100%;
+        input {
+          width: 300px;
+        }
+      }
 
-					@include bp($planetary){
-						display: block;
-						float: left;
-						max-width: 47%;
-						margin-right: 5px;
-						margin-left: 5px;
-					}
-				}
-			}
-
-			@include bp($max:950px){
-				width: 100%;
-				padding: 25px 0;
-			}
-		}
-		.main-foot__right {
-			width: 25%;
-			float: right;
-			h1 {
-				text-transform: uppercase;
-				margin: 0 0 5px 0;
-			}
-			.main-foot__social {
-				border-top: 2px dotted #939597;
-				padding-top: 15px;
-				margin-top: 20px;
-				ul {
-					list-style: none;
-					margin: 0;
-					padding: 0;
-					li {
-						float: left;
-						margin-right: 15px;
-						width: 20px;
-						a {
-							display: block;
-							height: 30px;
-							position: relative;
-							z-index: 5;
-							&:before {
-								content: "";
-								border-radius: 100%;
-								background: $color-3;
-								height: 30px;
-								width: 30px;
-								position: absolute;
-								z-index: -1;
-								top: -5px; left: -5px;
-							}
-						}
-						svg {
-							max-width: 20px;
-							max-height: 20px;
-							width: 20px;
-							height: 20px;
-							padding: 1px;
-							fill: $white;
-						}
-						&:hover {
-							a {
-								&:before {
-									background: $color-2;
-								}
-							}
-						}
-
-						@include bp($planetary){
-							width: 25%;
-							margin-right: 0;
-							a {
-								&:before {
-									left: 50%;
-									margin-left: -15px;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			@include bp($max:950px){
-				float: left;
-				width: 100%;
-				input {
-					width: 300px;
-				}
-			}
-
-			@include bp($planetary){
-				text-align: center;
-				form {
-					text-align: left;
-				}
-				input {
-					width: 100%;
-				}
-			}
-		}
-		.copyright {
-			@include col(12,$collapse:true);
-			font: {
-				size: emCalc(12pt);
-			}
-			a {
-				color: $color-body;
-			}
-
-			@include bp($planetary){
-				clear: both;
-				float: none;
-				margin: 0 auto;
-				text-align: center;
-				width: 80%;
-			}
-		}
-	}
+      @include bp($planetary) {
+        text-align: center;
+        form {
+          text-align: left;
+        }
+        input {
+          width: 100%;
+        }
+      }
+    }
+    .copyright {
+      @include col(12, $collapse: true);
+      font: {
+        size: emCalc(12pt);
+      };
+      a {
+        color: $color-body;
+      }
+      @include bp($planetary) {
+        clear: both;
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+      }
+    }
+  }
 }

@@ -8,84 +8,94 @@
     ::Globals
 \*------------------------------------*/
 html, body {
-	color: $color-body;
-	font: {
-		family: $fam-body;
-		size: emCalc(16pt);
-	}
-	line-height: emCalc(25pt);
+  color: $color-body;
+  font: {
+    family: $fam-body;
+    size: emCalc(16pt);
+  };
+  line-height: emCalc(25pt);
 }
 
 h1, h2, h3 {
-	
-	&.heading--blue {
-		color: $color-3;
-	}
-	&.heading--red {
-		color: #9b171a;
-	}
-	&.heading--yellow {
-		color: $color-1;
-	}
-	&.heading--green {
-		color: $color-2;
-	}
+  &.heading--blue {
+    color: $color-3;
+  }
+  &.heading--red {
+    color: #9b171a;
+  }
+  &.heading--yellow {
+    color: $color-1;
+  }
+  &.heading--green {
+    color: $color-2;
+  }
 }
 
 h1 {
-	font: {
-		size: emCalc(28pt);
-		weight: normal;
-	}
-	margin: 0.67em 0;
-	color: $color-2;
+  font: {
+    size: emCalc(29pt);
+    weight: normal;
+  };
+  line-height: 30px;
+  margin: 0.67em 0;
+  color: $color-2;
 }
 
 h2 {
-	font: {
-		size: emCalc(21pt);
-		weight: normal;
-	}
+  font: {
+    size: emCalc(21pt);
+    weight: normal;
+  };
 }
 
 h3 {
-	font: {
-		size: emCalc(16pt);
-	}
-	margin-bottom: 5px;
+  font: {
+    size: emCalc(16pt);
+  };
+  margin-bottom: 5px;
+  &.nomargin {
+    margin-bottom: 0px;
+  }
 }
 
 abbr[title] {
-	border-bottom: 1px dotted;
+  border-bottom: 1px dotted;
 }
 
 b,
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 dfn {
-	font-style: italic;
+  font-style: italic;
 }
 
+.center {
+  text-align: center;
+}
 
 mark {
-	background: #ff0;
-	color: #000;
+  background: #ff0;
+  color: #000;
 }
+
 small {
-	font-size: 80%;
+  font-size: 80%;
 }
+
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
+
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
+
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }

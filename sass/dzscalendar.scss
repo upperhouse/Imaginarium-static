@@ -1,376 +1,609 @@
-
-@mixin css_animation($transition-property, $transition-duration, $transition-timing) {
-transition-property: $transition-property;transition-duration: $transition-duration;transition-timing-function: $transition-timing;-moz-transition-property:$transition-property;-moz-transition-duration: $transition-duration;-moz-transition-timing-function:$transition-timing;-webkit-transition-property:$transition-property;-webkit-transition-duration: $transition-duration;-webkit-transition-timing-function:$transition-timing;-o-transition-property:$transition-property;-o-transition-duration: $transition-duration;-o-transition-timing-function:$transition-timing;-ms-transition-property:$transition-property;
--ms-transition-duration: $transition-duration;-ms-transition-timing-function:$transition-timing;
+@mixin apply_transition($transition-property, $transition-duration, $transition-timing) {
+  transition-property: $transition-property;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing;
+  -moz-transition-property: $transition-property;
+  -moz-transition-duration: $transition-duration;
+  -moz-transition-timing-function: $transition-timing;
+  -webkit-transition-property: $transition-property;
+  -webkit-transition-duration: $transition-duration;
+  -webkit-transition-timing-function: $transition-timing;
+  -o-transition-property: $transition-property;
+  -o-transition-duration: $transition-duration;
+  -o-transition-timing-function: $transition-timing;
+  -ms-transition-property: $transition-property;
+  -ms-transition-duration: $transition-duration;
+  -ms-transition-timing-function: $transition-timing;
 }
-@mixin box_sizing() {
-box-sizing:border-box;
--moz-box-sizing:border-box; /* Firefox */
--webkit-box-sizing:border-box; /* Safari */
+
+@mixin box_sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
 }
 
-
-    $transition-property: margin-top;
-    $transition-duration: 0.3s;
-    $transition-timing: ease-out;
+$transition-property: margin-top;
+$transition-duration: 0.3s;
+$transition-timing: ease-out;
 
 /* --- functional styling */
-$mainclass : '.dzscalendar';
-    
-    
-    $transition-property: height;
-    $transition-duration: 0.3s;
-    $transition-timing: ease-out;
-#{$mainclass}{ position:relative;  
-width: 100%;
-height: 165px;
-        @include css_animation($transition-property, $transition-duration, $transition-timing);
-}
-#{$mainclass} .main-mon, #{$mainclass} .mon-body, #{$mainclass} .mon-body > .mon-row { position:relative;
-}
-#{$mainclass} .events { display:none;
+
+$mainclass: ".dzscalendar";
+
+#{$mainclass} .events {
+  display: none;
 }
 
-#{$mainclass} .calendar-controls{ position:relative;
+#{$mainclass} .calendar-controls {
+  position: relative;
 }
-#{$mainclass} .theMonths { position:relative;
+
+#{$mainclass} .theMonths {
+  position: relative;
 }
-#{$mainclass} .theMonths > * { position:absolute; top:0; left:0; width: 100%;
-  @include box_sizing();
-}
+
 /* --- estethic styling */
 
-#{$mainclass}{
-    font-family: 'Carrois Gothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
+#{$mainclass} {
+  font-family: 'Carrois Gothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#{$mainclass} .testimonial span {
+  font-size: 2.5em;
+  font-family: Courier New, Arial;
+  font-style: normal;
+  line-height: 1.5;
+  color: #555;
+}
+
+#{$mainclass} .testimonial .the-author {
+  font-size: 1em;
+  font-family: Courier New, Arial;
+  font-style: normal;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.dzscalendar {
+  $transition-property: height;
+  $transition-duration: 0.3s;
+  $transition-timing: ease-out;
+  @include box_sizing;
+  * {
+    @include box_sizing;
+  }
+  position: relative;
+  width: 100%;
+  height: 165px;
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
+  .main-mon, .mon-body, .mon-body > .mon-row {
+    position: relative;
+  }
+  .week-day {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    width: 14%;
+    width: calc(100%/7);
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    .divimage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
     }
-#{$mainclass} .testimonial span { font-size: 2.5em;
-font-family: Courier New, Arial;
-font-style: italic; line-height:1em; color:#555; 
+    .divimage-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .the-number {
+      position: relative;
+    }
+    .the-event-content {
+      display: none;
+    }
+  }
+  .mon-row {
+    > span {
+      white-space: nowrap;
+    }
+  }
+  .theMonths {
+    width: 100%;
+    height: 151px;
+    margin-top: 0;
+    overflow: hidden;
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  .main-mon {
+    .week-day.tag-red {
+      background-color: red;
+      color: #fff;
+    }
+    .week-day.tag-important {
+      background-color: #ae1919;
+      color: #fff;
+    }
+    .week-day.tag-blue {
+      background-color: #2f96b4;
+      color: #fff;
+    }
+    .week-day.tag-imgbg {
+      background-color: transparent;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+  .mon-row, .headerRow {
+    white-space: nowrap;
+  }
+  .hasEvent, .hasEventForHover {
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    background: #9B171A;
+  }
+  .label {
+    color: #111;
+  }
 }
-#{$mainclass} .testimonial .the-author { font-size: 1em;
-font-family: Courier New, Arial;
-font-style: italic;  color:#aaa; margin-top:10px; }
 
-#{$mainclass} .main-mon .week-day{
-  padding-top:0; padding-bottom:0;  text-align:center; font-size:12px;
-  width: 14%;
-  width: calc(100%/7);
-  display: inline-block;
+.dzscalendar.tooltip_transition-showContent {
+  $transition-property: all;
+  $transition-duration: 0.3s;
+  $transition-timing: ease-out;
+  .theMonths {
+    //    overflow: visible;
+ 
+  }
+  .week-day {
+    .the-event-content {
+      visibility: hidden;
+      opacity: 0;
+      display: block;
+      padding: 20px;
+      background: #fff;
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      white-space: normal;
+      width: calc(100% + 80px);
+      transform: scale(0.8);
+      @include apply_transition($transition-property, $transition-duration, $transition-timing);
+      .divimage {
+        position: relative;
+        height: 160px;
+      }
+    }
+  }
+  .week-day.hasEventForHover:hover {
+    .the-event-content {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+      z-index: 505;
+    }
+  }
 }
 
-
-#{$mainclass} .main-mon .week-day.tag-red{
-  background-color: red;
-  color: #fff;
-}
-#{$mainclass} .main-mon .week-day.tag-important{
-  background-color: #ae1919;
-  color: #fff;
-}
-#{$mainclass} .main-mon .week-day.tag-blue{
-  background-color: #2f96b4;
-  color: #fff;
-}
-
-
-#{$mainclass}.mode-datepicker .main-mon .mon-body .week-day{
+#{$mainclass}.mode-datepicker .main-mon .mon-body .week-day {
   cursor: pointer;
 }
 
-#{$mainclass} .main-mon .other-months-date{ opacity:0.3; filter: alpha(opacity=30);
-}
-#{$mainclass} .past-date{ opacity:0.5; filter: alpha(opacity=50);
-}
-#{$mainclass} .hasEvent,#{$mainclass} .hasEventForHover{
-  color:#6fb6ce; text-shadow: rgba(0,0,0,0.0 ) 0px 0px 1px; cursor:pointer; font-weight:bold;
-}
-#{$mainclass} .calendar-controls{ min-height:27px; width:100%;
-}
-#{$mainclass} .calendar-controls .arrow-left{ position:absolute; top:1px; left:10px; background:transparent no-repeat center center url(../images/calendar/arrowline-left-simple.png); width:15px; height:16px; cursor:pointer;
-}
-#{$mainclass} .calendar-controls .arrow-right{ position:absolute; top:1px; right:10px; background:transparent no-repeat center center url(../images/calendar/arrowline-right-simple.png); width:15px; height:16px; cursor:pointer;
-}
-#{$mainclass} .calendar-controls .curr-date{ text-align:center; padding-top:0px;
-}
-#{$mainclass} .calendar-controls .curr-month{ margin-right:15px; 
-}
-#{$mainclass} .calendar-controls .curr-year{ color:#aaa;
+#{$mainclass} .main-mon .other-months-date {
+  opacity: 0.3;
+  filter: alpha(opacity = 30);
 }
 
-
- #{$mainclass} .theMonths, #{$mainclass} .calendar-controls { width:100%; marign-top:0;
-}
-#{$mainclass} .theMonths{
-    width:100%;
-    height:151px;
-    overflow: hidden;
-    marign-top:0;
-    }
-    
-    
-    
-#{$mainclass} .slideDescription{ position:absolute; top:0; left:0; text-align:left; padding:10px;
-        @include box_sizing();
-}
-#{$mainclass} .slideDescription .desc-close-button{ position:absolute; top:10px; right:5px; text-align:center; padding:1px 7px; border:1px solid white; border-radius:20px;
-font-family: arial, serif; cursor:pointer;
+#{$mainclass} .past-date {
+  opacity: 0.5;
+  filter: alpha(opacity = 50);
 }
 
+#{$mainclass} .calendar-controls {
+  min-height: 27px;
+  width: 100%;
+}
+
+#{$mainclass} .calendar-controls .arrow-left {
+  position: absolute;
+  top: 1px;
+  left: 10px;
+  background: transparent no-repeat center center url(../img/arrowline-left-simple.png);
+  width: 15px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#{$mainclass} .calendar-controls .arrow-right {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  background: transparent no-repeat center center url(../img/arrowline-right-simple.png);
+  width: 15px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#{$mainclass} .calendar-controls .curr-date {
+  text-align: center;
+  padding-top: 0px;
+}
+
+#{$mainclass} .calendar-controls .curr-month {
+  margin-right: 15px;
+}
+
+#{$mainclass} .calendar-controls .curr-year {
+  color: #aaa;
+}
+
+#{$mainclass} .theMonths, #{$mainclass} .calendar-controls {
+  width: 100%;
+}
+
+#{$mainclass} .slideDescription {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  padding: 10px;
+  @include box_sizing;
+}
+
+#{$mainclass} .slideDescription .desc-close-button {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  text-align: center;
+  padding: 1px 7px;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-family: arial, serif;
+  cursor: pointer;
+}
 
 /*=== the DZS tooltip -->
 */
-$sel_tooltip : ".dzstooltip";
-    
-    
-#{$mainclass} #{$sel_tooltip}{
-    position:absolute;
-    opacity:0;
-    z-index:576;
-    text-align:left;
-        @include css_animation($transition-property, $transition-duration, $transition-timing);
-    }
-#{$sel_tooltip} span.label{
-    font-weight:bold;
-}
-#{$sel_tooltip} > div{
-    padding-bottom:10px;
-    }
-#{$sel_tooltip} > div > h5{
-    font-size:1.25em;
-    font-weight:normal;
-    margin-top:7px;
-    margin-bottom:10px;
-    
-    }
+$sel_tooltip: ".dzstooltip";
 
-#{$mainclass} .aux-transition-container{
-  position: absolute;top:0; left:0;
+#{$mainclass} #{$sel_tooltip} {
+  position: absolute;
+  opacity: 0;
+  z-index: 576;
+  text-align: left;
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
+  .bg-div {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+#{$sel_tooltip} span.label {
+  font-weight: bold;
+}
+
+#{$sel_tooltip} > div {
+  padding-bottom: 10px;
+}
+
+#{$sel_tooltip} > div > h5 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
+#{$mainclass} .aux-transition-container {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   perspective: 1600px;
   -webkit-perspective: 1600px;
 }
 
-
 $transition-property: transform;
 $transition-duration: 0.8s;
 $transition-timing: ease-out;
-#{$mainclass} .aux-transition{
-  position: absolute;top:0; left:0;
+
+#{$mainclass} .aux-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
-  @include css_animation($transition-property, $transition-duration, $transition-timing);
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
 }
-#{$mainclass} .aux-transition > *{
+
+#{$mainclass} .aux-transition > * {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
-#{$mainclass} .aux-transition > .theMonths{
-  transform-origin: 50% 0 ;
+
+#{$mainclass} .aux-transition > .theMonths {
+  transform-origin: 50% 0;
   transform-style: preserve-3d;
-  -webkit-transform-origin: 50% 0 ;
+  -webkit-transform-origin: 50% 0;
   -webkit-transform-style: preserve-3d;
-  @include css_animation($transition-property, $transition-duration, $transition-timing);
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
 }
-#{$mainclass} .aux-transition > .calendar-controls{
-  transform: rotateX( -180deg );
-  transform-origin: 50% 100% ;
+
+#{$mainclass} .aux-transition > .calendar-controls {
+  transform: rotateX(-180deg);
+  transform-origin: 50% 100%;
   transform-style: preserve-3d;
-  -webkit-transform: rotateX( -180deg );
-  -webkit-transform-origin: 50% 100% ;
+  -webkit-transform: rotateX(-180deg);
+  -webkit-transform-origin: 50% 100%;
   -webkit-transform-style: preserve-3d;
-  @include css_animation($transition-property, $transition-duration, $transition-timing);
-  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-
-}
-#{$mainclass} .aux-transition.dzsflipped > .theMonths{
-  transform: rotateX( 180deg );
-  -webkit-transform: rotateX( 180deg );
-}
-#{$mainclass} .aux-transition.dzsflipped > .calendar-controls{
-  transform: rotateX( 0deg );
-  -webkit-transform: rotateX( 0deg );
-  box-shadow: 0 0 3px 0 rgba(0,0,0,0);
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
 }
 
-
-
-#{$mainclass} .aux-transition.backward > .theMonths{
-  transform: rotateX( 180deg );
-  -webkit-transform: rotateX( 180deg );
-}
-#{$mainclass} .aux-transition.backward > .calendar-controls{
-  transform: rotateX( 0deg );
-  -webkit-transform: rotateX( 0deg );
-
-}
-#{$mainclass} .aux-transition.backward.dzsflipped > .theMonths{
-  transform: rotateX( 180deg );
-  -webkit-transform: rotateX( 180deg );
-}
-#{$mainclass} .aux-transition.backward.dzsflipped > .calendar-controls{
-  transform: rotateX( -180deg );
-  -webkit-transform: rotateX( -180deg );
+#{$mainclass} .aux-transition.dzsflipped > .theMonths {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
 }
 
+#{$mainclass} .aux-transition.dzsflipped > .calendar-controls {
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0);
+}
 
+#{$mainclass} .aux-transition.backward > .theMonths {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+}
 
-    
-$mainclass : '.dzscalendar.skin-other';
-#{$mainclass} .testimonial span { font-size: 1em;
+#{$mainclass} .aux-transition.backward > .calendar-controls {
+  transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+}
+
+#{$mainclass} .aux-transition.backward.dzsflipped > .theMonths {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+}
+
+#{$mainclass} .aux-transition.backward.dzsflipped > .calendar-controls {
+  transform: rotateX(-180deg);
+  -webkit-transform: rotateX(-180deg);
+}
+
+.dzscalendar.skin-default {
+  .mon-row {
+    .week-day {
+      font-style: normal;
     }
-#{$mainclass} .testimonial .the-author { font-size: 1em;
-font-family: Courier New, Arial;
-font-style: italic;  color:#aaa; margin-top:0px; }
-
-
-
-$mainclass : '.dzscalendar.skin-black';
-#{$mainclass} .testimonial span { font-size: 1em;
-    }
-#{$mainclass} .testimonial .the-author { font-size: 1em;
-font-family: Courier New, Arial;
-font-style: italic;  color:#aaa; margin-top:0px; }
-
-#{$mainclass}{
-    background:#222;
-    color:#fff;
-    padding:7px 3px 12px;
-    border-radius:5px;
-    }
-#{$mainclass} .calendar-controls .arrow-left{ position:absolute; top:1px; left:10px; background:transparent no-repeat center center url(../images/calendar/arrowline-left-simple.png); width:15px; height:16px; cursor:pointer;
-}
-#{$mainclass} .calendar-controls .arrow-right{ position:absolute; top:1px; right:10px; background:transparent no-repeat center center url(../images/calendar/arrowline-right-simple.png); width:15px; height:16px; cursor:pointer;
+  }
 }
 
+$mainclass: ".dzscalendar.skin-other";
 
+#{$mainclass} .testimonial span {
+  font-size: 1em;
+}
 
-$mainclass : '.dzscalendar.skin-aurora';
-#{$mainclass}{
-    width: 100% ;
-    height: 230px;
-    }
-#{$mainclass} .calendar-controls{
+#{$mainclass} .testimonial .the-author {
+  font-size: 1em;
+  font-family: Courier New, Arial;
+  font-style: normal;
+  color: #aaa;
+  margin-top: 0px;
+}
+
+$mainclass: ".dzscalendar.skin-black";
+
+#{$mainclass} .testimonial span {
+  font-size: 1em;
+}
+
+#{$mainclass} .testimonial .the-author {
+  font-size: 1em;
+  font-family: Courier New, Arial;
+  font-style: normal;
+  color: #aaa;
+  margin-top: 0px;
+}
+
+#{$mainclass} {
+  background: #222;
+  color: #fff;
+  padding: 7px 3px 12px;
+  border-radius: 5px;
+}
+
+#{$mainclass} .calendar-controls .arrow-left {
+  position: absolute;
+  top: 1px;
+  left: 10px;
+  background: transparent no-repeat center center url(../img/arrowline-left-simple.png);
+  width: 15px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#{$mainclass} .calendar-controls .arrow-right {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  background: transparent no-repeat center center url(../img/arrowline-right-simple.png);
+  width: 15px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.dzscalendar.skin-aurora {
+  width: 100%;
+  height: 230px;
+  color: #333;
+  .calendar-controls {
     background: #333;
     color: #fff;
-    padding-top:6px;
+    padding-top: 6px;
+    .curr-date {
+      padding-top: 5px;
+      padding-bottom: 8px;
     }
-#{$mainclass} .theMonths{
+  }
+  .theMonths {
     height: auto;
+    background: #fff;
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
-#{$mainclass} .theMonths > *{
-    position: absolute; top:0; left:0;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .mon-row, .headerRow {
+    line-height: 1;
+  }
+  .mon-row:first-child {
+    .week-day {
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
-
-#{$mainclass} .main-mon .week-day{
-  text-align:center; font-size:11px;
-  background: rgb(238,238,238);
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(229,229,229,1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(229,229,229,1)));
-  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(229,229,229,1) 100%);
-  background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(229,229,229,1) 100%);
-  background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(229,229,229,1) 100%);
-  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(229,229,229,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#e5e5e5',GradientType=0 );
-  box-shadow: inset 1px 1px rgba(0, 0, 0, 0.2);
-  opacity:0.75;
-  @include box_sizing();
-}
-
-
-
-#{$mainclass} .main-mon .other-months-date{ opacity:0.3; filter: alpha(opacity=30);
-}
-#{$mainclass} .past-date{ opacity:0.5; filter: alpha(opacity=50);
-}
-#{$mainclass} .headerRow{
-    }
-#{$mainclass} .main-mon .week-day{
-    font-size:11px;
+  }
+  .week-day {
+    background-color: #e5e5e5;
+    opacity: 0.75;
+    @include box_sizing;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 11px;
+    text-align: center;
     font-family: Arial, sans-serif;
     padding: 3px 7px;
+    line-height: 1.2;
+  }
+  .week-day:first-child {}
+  .week-day:last-child {
+    border-right: 0px solid rgba(0, 0, 0, 0.2);
+  }
+  .hasEvent, .hasEventForHover {
+    color: #ae1919;
+    font-weight: normal;
+  }
+  .main-mon {
+    .today-date {
+      font-weight: bold;
     }
-#{$mainclass} .headerRow .week-day{
-    background: #f6f6f6;
-    font-size:8px;
-    border:0;
-    box-shadow: none;
+    .other-months-date {
+      opacity: 0.3;
+      filter: alpha(opacity = 30);
     }
-#{$mainclass} .mon-row{
-    border-left: 1px solid rgba(0,0,0,0.2);
-    border-right: 1px solid rgba(0,0,0,0.2);
+    .headerRow {}
+    .curr-months-date {
+      position: relative;
     }
-#{$mainclass} .calendar-controls .arrow-left{ position:absolute; top:8px; left:10px; background: transparent no-repeat center center url(../images/calendar/arrowleft.png); 
-    width:15px; height:16px; cursor:pointer;
-}
-#{$mainclass} .calendar-controls .arrow-right{ position:absolute; top:8px; right:10px; background: transparent no-repeat center center url(../images/calendar/arrowright.png); 
-    width:15px; height:16px; cursor:pointer;
-}
-#{$mainclass} .hasEvent,#{$mainclass} .hasEventForHover{
-  color:#0074cc; cursor:pointer; font-weight: normal;
-background: rgb(176,212,227);
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNiMGQ0ZTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjODhiYWNmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-radial-gradient(center, ellipse cover, rgba(176,212,227,1) 0%, rgba(136,186,207,1) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(176,212,227,1)), color-stop(100%,rgba(136,186,207,1)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%);
-background: -ms-radial-gradient(center, ellipse cover, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%);
-background: radial-gradient(ellipse at center, rgba(176,212,227,1) 0%,rgba(136,186,207,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0d4e3', endColorstr='#88bacf',GradientType=1 );
+    .past-date {
+      opacity: 0.5;
+      filter: alpha(opacity = 50);
+    }
+  }
 }
 
+$mainclass: ".dzscalendar.skin-aurora";
+
+#{$mainclass} .headerRow .week-day {
+  background: #f6f6f6;
+  font-size: 8px;
+  border: 0;
+  box-shadow: none;
+}
+
+#{$mainclass} .mon-row {}
+
+#{$mainclass} .calendar-controls .arrow-left, #{$mainclass} .calendar-controls .arrow-right {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  background: transparent no-repeat center center url(../img/arrowleft.png);
+  width: 15px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#{$mainclass} .calendar-controls .arrow-right {
+  left: auto;
+  right: 10px;
+  background: transparent no-repeat center center url(../img/arrowright.png);
+}
 
 /*======
 ========skin-responsive
 */
 
-$mainclass : '.dzscalendar.skin-responsive';
-#{$mainclass}{ 
-    margin-top:15px;
-    margin-bottom:20px;
-    width:100%;
+$mainclass: ".dzscalendar.skin-responsive";
+
+#{$mainclass} {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
   height: auto;
-    }
-#{$mainclass} .calendar-controls{
-    margin-bottom: 8px;
-    }
-#{$mainclass} .theMonths{
-    height:auto;
-    }
-#{$mainclass} .theMonths > *{
-    width:100%;
-    position: relative;
-    }
-
-#{$mainclass} .main-mon .week-day{
-    width: 14%;
-    height: 30px;
-    border-left:1px solid rgba(0,0,0,.1);
-}
-#{$mainclass} .main-mon .mon-row .week-day:first-child{
-    border-left:0px solid rgba(0,0,0,.1);
-    }
-#{$mainclass} .main-mon .other-months-date{
-}
-#{$mainclass} .past-date{ 
-}
-#{$mainclass} .headerRow{
-    }
-#{$mainclass} .headerRow .week-day{
-    }
-#{$mainclass} .mon-row{
-    }
-#{$mainclass} .calendar-controls .arrow-left{ 
-    left:35px;
-}
-#{$mainclass} .calendar-controls .arrow-right{ 
-    right:25px;
 }
 
+#{$mainclass} .calendar-controls {
+  margin-bottom: 8px;
+}
 
+#{$mainclass} .theMonths {
+  height: auto;
+}
+
+#{$mainclass} .theMonths > * {
+  width: 100%;
+  position: relative;
+}
+
+#{$mainclass} .main-mon .week-day {
+  width: 14%;
+  height: 30px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#{$mainclass} .main-mon .mon-row .week-day:first-child {
+  border-left: 0px solid rgba(0, 0, 0, 0.1);
+}
+
+#{$mainclass} .main-mon .other-months-date {}
+
+#{$mainclass} .past-date {}
+
+#{$mainclass} .headerRow {}
+
+#{$mainclass} .headerRow .week-day {}
+
+#{$mainclass} .mon-row {}
+
+#{$mainclass} .calendar-controls .arrow-left {
+  left: 35px;
+}
+
+#{$mainclass} .calendar-controls .arrow-right {
+  right: 25px;
+}
 
 /*==========================================================
 ========skin-responsive-galileo
@@ -383,167 +616,365 @@ $color_bg2: #ba5e5e;
 $transition-property: height;
 $transition-duration: 0.8s;
 $transition-timing: ease-out;
-$mainclass : '.dzscalendar.skin-responsive-galileo';
+$mainclass: ".dzscalendar.skin-responsive-galileo";
 
-.dzscalendar-con.skin-responsive-galileo{
-  box-shadow: 1px 2px 5px 0 rgba(0,0,0,.2);
-
+.dzscalendar-con.skin-responsive-galileo {
+  box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-#{$mainclass}{
-  margin-top:15px;
-  margin-bottom:20px;
-  width:100%;
+.dzscalendar.skin-responsive-galileo {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
   height: auto;
-  @include css_animation($transition-property, $transition-duration, $transition-timing);
+  color: #222;
+  @include apply_transition($transition-property, $transition-duration, $transition-timing);
+  overflow: visible;
 }
-#{$mainclass} .calendar-controls{
+
+#{$mainclass} .calendar-controls {
   margin-bottom: 8px;
 }
-#{$mainclass} .theMonths{
-  height:auto;
-  @include box_sizing();
+
+#{$mainclass} .theMonths {
+  height: auto;
+  @include box_sizing;
 }
-#{$mainclass} .theMonths > *{
-  width:100%;
+
+#{$mainclass} .theMonths > * {
+  width: 100%;
   position: relative;
 }
 
-#{$mainclass} .main-mon .other-months-date{
+#{$mainclass} .main-mon .other-months-date {}
+
+#{$mainclass} .past-date {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
-#{$mainclass} .past-date{
-  color: rgba(0,0,0,0.5);
-  opacity:1;
-}
-#{$mainclass} .headerRow{
+
+#{$mainclass} .headerRow {
   background: $color_bg2;
-  color:#eee;
+  color: #eee;
 }
-#{$mainclass} .headerRow .week-day{
+
+#{$mainclass} .headerRow .week-day {
   padding: 5px 0;
 }
-#{$mainclass} .mon-row{
-}
 
+#{$mainclass} .mon-row {}
 
-#{$mainclass} .mon-row.separator{
+#{$mainclass} .mon-row.separator {
   height: 20px;
 }
 
-
-#{$mainclass} .theMonths{
+#{$mainclass} .theMonths {
   background: $color_bg;
-  @include box_sizing();
+  @include box_sizing;
 }
-#{$mainclass} .main-mon{
+
+#{$mainclass} .main-mon {}
+
+#{$mainclass} .main-mon .mon-body .mon-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-#{$mainclass} .main-mon .mon-body .mon-row{
-  border-top:1px solid rgba(0,0,0,.1);
-}
-#{$mainclass} .main-mon .mon-body .mon-row:empty{
+
+#{$mainclass} .main-mon .mon-body .mon-row:empty {
   display: none;
 }
-#{$mainclass} .main-mon .mon-body .mon-row:first-child{
-  border-top:0px solid rgba(0,0,0,.1);
+
+#{$mainclass} .main-mon .mon-body .mon-row:first-child {
+  border-top: 0px solid rgba(0, 0, 0, 0.1);
 }
-#{$mainclass} .main-mon .mon-body .week-day{
+
+#{$mainclass} .main-mon .mon-body .week-day {
   width: 14%;
   height: 50px;
-  border-left:1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
   vertical-align: bottom;
   text-align: right;
   font-size: 14px;
   font-size: 0.8rem;
-  @include box_sizing();
+  @include box_sizing;
   position: relative;
 }
 
-#{$mainclass} .main-mon .week-day > span{
+#{$mainclass} .main-mon .week-day > span {
   position: absolute;
-  right:4px;
-  bottom:0;
-}
-#{$mainclass} .main-mon .mon-row .week-day:first-child{
-  border-left:0px solid rgba(0,0,0,.1);
+  right: 4px;
+  bottom: 0;
 }
 
-
-#{$mainclass} .calendar-controls .arrow-left{
-  left:35px;
-}
-#{$mainclass} .calendar-controls .arrow-right{
-  right:25px;
-}
-#{$mainclass} .hasEvent{
+#{$mainclass} .main-mon .mon-row .week-day:first-child {
+  border-left: 0px solid rgba(0, 0, 0, 0.1);
 }
 
-#{$mainclass} .theMonths{
+#{$mainclass} .calendar-controls .arrow-left {
+  left: 35px;
 }
-#{$mainclass} .calendar-controls{
+
+#{$mainclass} .calendar-controls .arrow-right {
+  right: 25px;
+}
+
+#{$mainclass} .hasEvent {}
+
+#{$mainclass} .theMonths {}
+
+#{$mainclass} .calendar-controls {
   height: 350px;
   background: #eee;
   margin-bottom: 0;
 }
 
-#{$mainclass} .calendar-controls .month-bg{
-  position: absolute; top:0; left:0; width: 100%;
+#{$mainclass} .calendar-controls .month-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center center;
 }
-#{$mainclass} .curr-date{
+
+#{$mainclass} .curr-date {
   color: #eee;
   position: absolute;
-  right: 40px
-  ;
-  bottom:40px;
+  right: 40px;
+  bottom: 40px;
   font-size: 22px;
-  border: 2px solid rgba(255,255,255,0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 15px 20px;
-  text-shadow: 1px 0px 1px rgba(0,0,0,0.3);
+  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.3);
 }
-#{$mainclass} .curr-date > *{
+
+#{$mainclass} .curr-date > * {
   color: #eee;
 }
 
-
-#{$mainclass} .calendar-controls .arrow-left{
-  position:absolute; left:10px; opacity: 0.5; top:auto; bottom:40px; background:transparent no-repeat center center url(../images/calendar/arrowleft-galileo.png); width:50px; height:50px; cursor:pointer;
-}
-#{$mainclass} .calendar-controls .arrow-left:hover{
-  opacity: 0.7;
-}
-#{$mainclass} .calendar-controls .arrow-right{
-  position:absolute; left:auto; right: 0px; opacity: 0.5; top:auto; bottom:40px;
-  background:transparent no-repeat center center url(../images/calendar/arrowright-galileo.png);
-  width:50px; height:50px; cursor:pointer;
-}
-#{$mainclass} .calendar-controls .arrow-right:hover{
-  opacity: 0.7;
+#{$mainclass} .calendar-controls .arrow-left {
+  position: absolute;
+  left: 10px;
+  opacity: 0.5;
+  top: auto;
+  bottom: 40px;
+  background: transparent no-repeat center center url(../img/arrowleft-galileo.png);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
-#{$mainclass}.under-480 .curr-date{
+#{$mainclass} .calendar-controls .arrow-left:hover {
+  opacity: 0.7;
+}
+
+#{$mainclass} .calendar-controls .arrow-right {
+  position: absolute;
+  left: auto;
+  right: 0px;
+  opacity: 0.5;
+  top: auto;
+  bottom: 40px;
+  background: transparent no-repeat center center url(../img/arrowright-galileo.png);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#{$mainclass} .calendar-controls .arrow-right:hover {
+  opacity: 0.7;
+}
+
+.dzscalendar.skin-lions {
+  background-color: #eeeeee;
+  padding: 20px;
+  font-family: "Lato", "Open Sans", arial;
+  .calendar-controls {
+    margin-bottom: 20px;
+    .arrow-left, .arrow-right {
+      top: 24px;
+      left: 15px;
+      background-image: none;
+      line-height: 1;
+    }
+    .arrow-right {
+      left: auto;
+      right: 15px;
+    }
+  }
+  .curr-date {
+    background-color: #ffffff;
+    padding: 15px;
+    .curr-month {
+      font-size: 30px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #222222;
+      margin-right: 10px;
+    }
+    .curr-year {
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
+  .week-day {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 5px;
+    text-align: left;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #222222;
+    .the-event-content {
+      h5 {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .week-day.odd {
+    background-color: #f4f4f4;
+  }
+  .week-day.hasEvent, .week-day.hasEventForHover {
+    .divimage-overlay {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .the-number {
+      font-size: 50px;
+      color: #fff;
+      font-weight: 300;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .mon-head {
+    .week-day {
+      text-align: center;
+    }
+  }
+  .mon-body {
+    margin-top: 15px;
+  }
+  .mon-body > .mon-row:nth-last-child(1) {
+    .week-day {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dzscalendar.skin-lions-square {
+  background-color: #eeeeee;
+  padding: 20px;
+  font-family: "Lato", "Open Sans", arial;
+  .mon-head {
+    .week-day {
+      padding: 15px 0;
+    }
+  }
+  .calendar-controls {
+    margin-bottom: 4px;
+    .arrow-left, .arrow-right {
+      top: 18px;
+      left: 15px;
+      background-image: none;
+      line-height: 1;
+    }
+    .arrow-right {
+      left: auto;
+      right: 15px;
+    }
+  }
+  .curr-date {
+    background-color: #ffffff;
+    padding: 15px;
+    .curr-month {
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #222222;
+      margin-right: 10px;
+    }
+    .curr-year {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  .week-day {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 5px;
+    text-align: left;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #222222;
+    line-height: 1;
+    font-size: 14px;
+    .the-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .the-event-content {
+      h5 {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .week-day.odd {
+    background-color: #f4f4f4;
+  }
+  .week-day.hasEvent, .week-day.hasEventForHover {
+    .divimage-overlay {
+      background: rgba(68, 68, 68, 1);
+    }
+    .the-number {
+      color: #fff;
+    }
+  }
+  .mon-head {
+    .week-day {
+      text-align: center;
+    }
+  }
+  .mon-body {
+    margin-top: 0px;
+  }
+  .mon-body > .mon-row:nth-last-child(1) {
+    .week-day {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* --- responsive props */
+#{$mainclass}.under-480 .curr-date {
   font-size: 13px;
 }
 
-#{$mainclass}.under-240 .main-mon .week-day{
+#{$mainclass}.under-240 .main-mon .week-day {
   width: 14%;
   height: 30px;
   font-size: 12px;
   font-size: 0.6rem;
 }
-#{$mainclass}.under-240 .theMonths{
-}
-#{$mainclass}.under-240 .curr-date{
+
+#{$mainclass}.under-240 .theMonths {}
+
+#{$mainclass}.under-240 .curr-date {
   font-size: 10px;
 }
-#{$mainclass}.under-240 .calendar-controls{
+
+#{$mainclass}.under-240 .calendar-controls {
   height: 230px;
 }
 
-
 $transition-duration: 0s;
-.non-animation{
+
+.non-animation {
   transition-duration: $transition-duration;
   -webkit-transition-duration: $transition-duration;
   -moz-transition-duration: $transition-duration;
@@ -551,11 +982,53 @@ $transition-duration: 0s;
   -o-transition-duration: $transition-duration;
 }
 
-.event-receiver{
+.event-receiver {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.2);
-  @include box_sizing();
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  @include box_sizing;
   padding: 10px 15px;
-  border-radius:0;
+  border-radius: 0;
   color: #888;
+}
+
+.dzscal-blog-event {
+  position: relative;
+  @include box_sizing;
+  * {
+    @include box_sizing;
+  }
+  .dzscal-date-con {
+    float: left;
+    width: 70px;
+    margin-right: 30px;
+    background: #cb1919;
+    text-align: center;
+    color: #fff;
+    padding: 18px 10px;
+    font-family: Courier New, Arial;
+    .date-con--date {
+      font-size: 30px;
+      margin-bottom: 3px;
+    }
+    .date-con--month {
+      font-size: 15px;
+      opacity: 0.7;
+    }
+  }
+  .dzscal-event-content {
+    max-width: 270px;
+    p {
+      font-size: 0.875rem;
+      line-height: 0.975rem;
+    }
+    a {
+      color: #9B171A;
+    }
+  }
+}
+
+.dzscal-blog-event:after {
+  display: block;
+  clear: both;
+  content: " ";
 }

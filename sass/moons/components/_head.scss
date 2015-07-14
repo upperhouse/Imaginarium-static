@@ -1,291 +1,317 @@
-/*------------------------------------*\
+  /*------------------------------------*\
     ::Header
 \*------------------------------------*/
 .main-head {
-	position: relative;
-	.main-head__inner {
-		position: relative;
-		padding: 20px $pad 35px $pad;
-	}
-	.main-head__angler {
-		display: block;
-		width: 100%;
-		height: 175px;
-		position: absolute;
-		overflow: hidden;
-		&:after {
-			position: absolute;
-			bottom: -60px;
-			left: -1em;
-			width: 105%; 
-			height:83px;
-			overflow: hidden;
-			background: $color-1;
-			content: "";
-			transform: translateZ(0px) rotate(-1.5deg);
-			outline: 1px solid transparent;
-			z-index: -1;
-			box-shadow: 0 4px 2px -2px rgba(121, 108, 108, 0.5);
-			outline: 1px solid transparent;
-		}
+  position: relative;
+  .main-head__inner {
+    position: relative;
+    padding: 20px $pad 35px $pad;
+  }
+  .main-head__angler {
+    display: block;
+    width: 100%;
+    height: 175px;
+    position: absolute;
+    overflow: hidden;
+    &:after {
+      position: absolute;
+      bottom: -60px;
+      left: -1em;
+      width: 105%;
+      height: 83px;
+      overflow: hidden;
+      background: $color-1;
+      content: "";
+      transform: translateZ(0px) rotate(-1.5deg);
+      outline: 1px solid transparent;
+      z-index: -1;
+      box-shadow: 0 4px 2px -2px rgba(121, 108, 108, 0.5);
+      outline: 1px solid transparent;
+    }
+    @include bp($max: 1080px) {
+      &:after {
+        height: 88px;
+      }
+    }
 
-		@include bp($max:1080px){
-			&:after {
-				height: 88px;
-			}
-		}
+    @include bp($solarsystem) {
+      height: 225px;
+    }
+  }
+  .main-head__logo {
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .main-head__actions {
+    position: absolute;
+    right: 8px;
+    top: 33%;
+    width: 175px;
+  }
+  .main-head_login {
+    position: absolute;
+    right: 8px;
+    top: 13%;
+    width: 275px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        float: left;
+        margin-right: 15px;
+        width: auto;
+        a {
+          font: {
+            size: emCalc(17pt);
+          };
+        }
+      }
+    }
+  }
+  .main-head__social {
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        float: left;
+        margin-right: 15px;
+        width: 20px;
+        a {
+          display: block;
+          height: 30px;
+          position: relative;
+          &:before {
+            content: "";
+            border-radius: 100%;
+            background: $color-3;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            z-index: -1;
+            top: -5px;
+            left: -5px;
+          }
+        }
+        svg {
+          max-width: 20px;
+          max-height: 20px;
+          width: 20px;
+          height: 20px;
+          padding: 1px;
+          fill: $white;
+        }
+        &:hover {
+          a {
+            &:before {
+              background: $color-2;
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-head__search {
+    display: inline-block;
+    vertical-align: bottom;
+    #PageSearchFormButton {
+      width: 25px;
+      height: 54px;
+      background-image: url("../images/global/search.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    #PageSearchForm {
+      background: $color-1;
+      border-radius: 5px;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 100;
+      width: 0;
+      // transform: translateX(500%);
+      transition: padding 400ms, width 400ms;
+      overflow: hidden;
+      input {
+        width: 100%;
+      }
+      &.active {
+        width: 225px;
+        padding: 10px;
+      }
+    }
+  }
+  .main-head__hero {
+    background: #ffffff;
+    .hero__inner {
+      padding: 0;
+    }
+    .hero-slider__slide {
+      position: relative;
+      .hero__image {
+        height: 220px;
+        background-size: cover;
+        background-position: center 30%;
+        @include bp($max: 850px) {
+          height: 250px;
+        }
+      }
+      .hero__text {
+        position: absolute;
+        bottom: 40%;
+        right: 10%;
+        color: #ffffff;
+        font: {
+          size: emCalc(37pt);
+        };
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        backface-visibility: hidden;
+      }
+      .hero-slider__cta {
+        background: $color-2;
+        color: #ffffff;
+        height: 75px;
+        padding: 15px $pad;
+        font: {
+          size: emCalc(13pt);
+        };
+        letter-spacing: 1px;
+        .cta__text {
+          @include col(9);
+          font-weight: 100;
+          line-height: 16px;
+          p {
+            margin: 0;
+          }
+        }
+        .cta__btn {
+          width: 150px;
+          float: right;
+          margin-right: 50px;
+          background: $color-1;
+          line-height: 17px;
+          &:hover {
+            background: $color-3;
+            a {
+              color: #ffffff;
+              text-decoration: none;
+            }
+          }
+          a {
+            display: block;
+            padding: 6px $pad;
+            width: 100%;
+            color: $color-3;
+            font: {
+              size: emCalc(16pt);
+              weight: bold;
+            };
+            &:after {
+              content: ">>";
+              color: #ffffff;
+              margin-left: 5px;
+              font: {
+                size: emCalc(15pt);
+                weight: 100;
+              };
+            }
+          }
+        }
+      }
+      @include bp($solarsystem) {
+        .hero__text {
+          bottom: 55%;
+          right: 0;
+          left: 0;
+          text-align: center;
+        }
+        .hero-slider__cta {
+          height: 150px;
+        }
+      }
 
-		@include bp($solarsystem){
-			height: 225px;
-		}
-	}
-	.main-head__logo {
-		width: 25%;
-		display: inline-block;
-		vertical-align: middle;
-	}
-	.main-head__actions {
-		position: absolute;
-		right: 8px; top: 33%;
-		width: 175px;
-	}
-	.main-head__social {
-		width: 80%;
-		display: inline-block;
-		vertical-align: middle;
-		ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			li {
-				float: left;
-				margin-right: 15px;
-				width: 20px;
-				a {
-					display: block;
-					height: 30px;
-					position: relative;
-					&:before {
-						content: "";
-						border-radius: 100%;
-						background: $color-3;
-						height: 30px;
-						width: 30px;
-						position: absolute;
-						z-index: -1;
-						top: -5px; left: -5px;
-					}
-				}
-				svg {
-					max-width: 20px;
-					max-height: 20px;
-					width: 20px;
-					height: 20px;
-					padding: 1px;
-					fill: $white;
-				}
-				&:hover {
-					a {
-						&:before {
-							background: $color-2;
-						}
-					}
-				}
-			}
-		}
-	}
+      @include bp($max: 850px) {
+        .hero-slider__cta {
+          background: #ffffff;
+          color: $color-body;
+          height: 225px;
+          .cta__text {
+            @include col(12);
+            text-align: center;
+            strong {
+              display: block;
+              @include col(12);
+            }
+          }
+          .cta__btn {
+            display: none;
+          }
+        }
+      }
 
-	.main-head__search {
-		display: inline-block;
-		vertical-align: bottom;
-		#PageSearchFormButton {
-			width: 25px; height: 54px;
-			background-image: url('../images/global/search.png');
-			background-size: contain;
-			background-repeat: no-repeat;
-			&:hover {
-				cursor: pointer;
-			}
-		}
-		#PageSearchForm {
-			background: $color-1;
-			border-radius: 5px;
-			position: absolute;
-			right: 0;
-			top: 100%;
-			z-index: 100;
-			width: 0;
-			// transform: translateX(500%);
-			transition: padding 400ms, width 400ms;
-			overflow: hidden;
-			input {
-				width: 100%;
-			}
-			&.active {
-				width: 225px;
-				padding: 10px;
-			}
-		}
-	}
+      @include bp($max: 650px) {
+        .hero__text {
+          font-size: emCalc(24pt);
+          bottom: auto;
+          top: 30%;
+        }
+        .hero-slider__cta {
+          font-size: emCalc(14pt);
+        }
+      }
 
-	.main-head__hero {
-		background: #ffffff;
-		.hero__inner {
-			padding: 0;
-		}
-		.hero-slider__slide {
-			position: relative;
-			.hero__image {
-				height: 220px;
-				background-size: cover;
-				background-position: center 30%;
-
-				@include bp($max:850px){
-					height: 250px;
-				}
-			}
-			.hero__text {
-				position: absolute;
-				bottom: 40%; right: 10%;
-				color: #ffffff;
-				font: {
-					size: emCalc(37pt);
-				}
-				letter-spacing: 1px;
-				text-transform: uppercase;
-				backface-visibility: hidden;
-			}
-			.hero-slider__cta {
-				background: $color-2;
-				color: #ffffff;
-				height: 75px;
-				padding: 15px $pad;
-				font: {
-					size: emCalc(15pt);
-				}
-				letter-spacing: 1px;
-				.cta__text {
-					@include col(9);
-					font-weight: 100;
-				}
-				.cta__btn {
-					width: 150px;
-					float: right;
-					margin-right: 50px;
-					background: $color-1;
-					line-height: 17px;
-					&:hover {
-						background: $color-3;
-						a {
-							color: #ffffff;
-							text-decoration: none;
-						}
-					}
-					a {
-						display: block;
-						padding:6px $pad;
-						width: 100%;
-						color: $color-3;
-						font: {
-							size: emCalc(16pt);
-							weight: bold;
-						}
-						&:after {
-							content: ">>";
-							color: #ffffff;
-							margin-left: 5px;
-							font: {
-								size: emCalc(15pt);
-								weight: 100;
-							}
-						}
-					}
-				}
-			}
-
-			@include bp($solarsystem){
-				.hero__text {
-					bottom: 55%;
-					right: 0;
-					left: 0;
-					text-align: center;
-				}
-				.hero-slider__cta {
-					height: 150px;
-				}
-			}
-
-			@include bp($max:850px){
-				.hero-slider__cta {
-					background: #ffffff;
-					color: $color-body;
-					height: 225px;
-					.cta__text {
-						@include col(12);
-						text-align: center;
-						strong {
-							display: block;
-							@include col(12);
-						}
-					}
-					.cta__btn {
-						display: none;
-					}
-				}
-			}
-
-			@include bp($max:650px){
-				.hero__text {
-					font-size: emCalc(24pt);
-					bottom: auto; top: 30%;
-				}
-				.hero-slider__cta {
-					font-size: emCalc(14pt);
-				}
-			}
-
-			@include bp($max:500px){
-				.hero__image {
-					background-position: 75%;
-					height: 190px;
-				}
-			}
-		}
-	}
-
-	@include bp($solarsystem){
-		.main-head__logo {
-			width: 100%;
-			text-align: center;
-			img {
-				max-width: 250px;
-			}
-		}
-		.main-head__inner {
-			padding-top: 66px;
-		}
-		.main-head__actions {
-			width: 100%;
-			height: 54px;
-			border-bottom: 1px solid $color-2-dark;
-			background: $color-2;
-			position: absolute;
-			top: 0; left: 0; right: 0;
-			z-index: 30;
-		}
-		.main-head__social {
-			display: none;
-		}
-		.main-head__search {
-			float: right;
-			padding-right: 25px;
-		}
-		.main-head__search {
-			position: relative;
-			z-index: 5;
-			#PageSearchFormButton {
-				background-image: url('../images/global/mobile-search.png');
-			}
-		}
-	}
+      @include bp($max: 500px) {
+        .hero__image {
+          background-position: 75%;
+          height: 190px;
+        }
+      }
+    }
+  }
+  @include bp($solarsystem) {
+    .main-head__logo {
+      width: 100%;
+      text-align: center;
+      img {
+        max-width: 250px;
+      }
+    }
+    .main-head__inner {
+      padding-top: 66px;
+    }
+    .main-head__actions {
+      width: 100%;
+      height: 54px;
+      border-bottom: 1px solid $color-2-dark;
+      background: $color-2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+    }
+    .main-head__social {
+      display: none;
+    }
+    .main-head__search {
+      float: right;
+      padding-right: 25px;
+    }
+    .main-head__search {
+      position: relative;
+      z-index: 5;
+      #PageSearchFormButton {
+        background-image: url("../images/global/mobile-search.png");
+      }
+    }
+  }
 }

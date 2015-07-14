@@ -2,106 +2,139 @@
     :: Content Block
 \*------------------------------------*/
 .content__block {
-	@include col(12);
-	padding: 25px 0;
+  @include col(12);
+  padding: 25px 0;
+  &.register {
+    padding: 0 0;
+  }
+  &.blocktable {
+    display: table;
+  }
+  &.nopad {
+    padding: 0;
+    h1 {
+      margin: 0;
+    }
+  }
+  .profileimg {
+    max-width: 100px;
+  }
+  .peerlnk {
+    font-weight: bold;
+  }
+  .content__block--two-one {
+    @include col(4);
+    &:first-of-type {
+      @include col(8);
+    }
+    @include bp($solarsystem) {
+      @include col(12);
+      padding: 25px 0;
+      &:first-of-type {
+        @include col(12);
+        padding: 25px 0;
+      }
+    }
+  }
+  .content__block--one-two {
+    @include col(8);
+    padding: 25px $pad;
+    &:first-of-type {
+      @include col(4);
+    }
+    @include bp($solarsystem) {
+      @include col(12);
+      padding: 25px 0;
+      &:first-of-type {
+        @include col(12);
+        padding: 25px 0;
+      }
+    }
+  }
+  .content__block--three {
+    @include col(4);
+    @include bp($solarsystem) {
+      display: inline-block;
+      vertical-align: middle;
+      width: 49%;
+      float: none;
+    }
 
-	.content__block--two-one {
-		@include col(4);
-		&:first-of-type {
-			@include col(8);
-		}
+    @include bp($max: 900px) {
+      width: 100%;
+      padding: 25px 0;
+    }
+  }
+  .content__block--six {
+    @include col(2);
+    @include bp($solarsystem) {
+      display: inline-block;
+      vertical-align: middle;
+      width: 12%;
+      float: none;
+    }
 
-		@include bp($solarsystem){
-			@include col(12);
-			padding: 25px 0;
-			&:first-of-type {
-				@include col(12);
-				padding: 25px 0;
-			}
-		}
-	}
+    @include bp($max: 900px) {
+      width: 100%;
+      padding: 25px 0;
+    }
+  }
+  .content__block--half {
+    @include col(6);
+    @include bp($solarsystem) {
+      @include col(12);
+      padding: 25px 0;
+    }
 
-	.content__block--one-two {
-		@include col(8);
-		padding: 25px $pad;
-		&:first-of-type {
-			@include col(4);
-		}
+    &.blocktablecell {
+      display: table-cell;
+    }
+  }
+  .content__block--full {
+    h1 {
+      color: $color-3;
+    }
+  }
+  @include bp($solarsystem) {
+    text-align: center;
+    .content__block--two-one,
+    .content__block--one-two,
+    .content__block--three,
+    .content__block--full,
+    .content__block--half {
+      text-align: left;
+    }
+  }
 
-		@include bp($solarsystem){
-			@include col(12);
-			padding: 25px 0;
-			&:first-of-type {
-				@include col(12);
-				padding: 25px 0;
-			}
-		}
-	}
-
-	.content__block--three {
-		@include col(4);
-		@include bp($solarsystem){
-			display: inline-block;
-			vertical-align: middle;
-			width: 49%;
-			float: none;
-		}
-		@include bp($max:900px){
-			width: 100%;
-			padding: 25px 0;
-		}
-	}
-
-	.content__block--half {
-		@include col(6);
-
-		@include bp($solarsystem) {
-			@include col(12);
-			padding: 25px 0;
-		}
-	}
-
-	@include bp($solarsystem){
-		text-align: center;
-		.content__block--two-one,
-		.content__block--one-two,
-		.content__block--three,
-		.content__block--full,
-		.content__block--half {
-			text-align: left;
-		}
-	}
-
-	@include bp($max:900px){
-		padding: 0;
-	}
+  @include bp($max: 900px) {
+    padding: 0;
+  }
 }
 
-@include bp($solarsystem){
-	.content-block--nopadding {
-		&.content-block__inner {
-			padding: 0;
-		}
-		.content__block {
-			padding: 0;
-		}
-		.content__block--three {
-			float: left;
-			width: 50%;
-			padding: 0;
-
-			.circle__cta {
-				margin: 0;
-			}
-		}
-	}
+@include bp($solarsystem) {
+  .content-block--nopadding {
+    &.content-block__inner {
+      padding: 0;
+    }
+    .content__block {
+      padding: 0;
+    }
+    .content__block--three {
+      float: left;
+      width: 50%;
+      padding: 0;
+      .circle__cta {
+        margin: 0;
+      }
+    }
+  }
 }
 
-@include bp($max:900px){
-	.content-block--nopadding {
-		.content__block--three {
-			width: 100%;
-		}
-	}
-}
 
+@include bp($max: 900px) {
+  .content-block--nopadding {
+    .content__block--three {
+      width: 100%;
+    }
+  }
+}
