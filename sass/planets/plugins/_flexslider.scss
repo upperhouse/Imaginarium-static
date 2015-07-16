@@ -7,7 +7,7 @@
   .flex-control-nav {
     display: block;
     bottom: auto;
-    top: 67%;
+    top: 200px;
     max-width: 100%;
     @include bp($solarsystem) {
       display: block;
@@ -42,7 +42,7 @@
     display: block;
     .flex-prev {
       left: 35%;
-      top: 72%;
+      top: 220px;
       opacity: 1;
       height: 20px;
       width: 22px;
@@ -55,7 +55,7 @@
     }
     .flex-next {
       right: 35%;
-      top: 72%;
+      top: 220px;
       opacity: 1;
       height: 20px;
       width: 22px;

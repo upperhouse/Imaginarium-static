@@ -199,3 +199,89 @@ ul.pagination {
     color: #00A44B;
   }
 }
+.content__block{
+  form{
+    @include bp($solarsystem){
+      [class*="content__block--"]{
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+  &.border{
+    border: 1px solid $color-1;
+    margin-top: 1em;
+    h3,
+    p{
+      padding-right: $pad;
+      padding-left: $pad;
+    }
+  }
+}
+.content__block--form-wrapper{
+  padding: 25px $pad;
+  float: left;
+  width: 100%;
+  .register{
+    text-align: right;
+  }
+  input{
+    width: 100%;
+  }
+  select{
+    height: 32px;
+  }
+  .content__block--six{
+    @include bp($solarsystem){
+      text-align: left;
+      width: 100%;
+    }
+    @include bp(900px){
+      padding: 0;
+    }
+  }
+  .content__block--three{
+    @include bp($solarsystem){
+      width: 50%;
+      float: left;
+    }
+    @include bp(900px){
+      padding: 0;
+    }
+    @include bp(650px){
+      width: 100%;
+    }
+  }
+  @include bp($solarsystem){
+    padding: 25px 0;
+  }
+}
+.content__block--form-border{
+  border: 1px solid $color-1;
+  float: left;
+  padding: $pad;
+  width: 100%;
+}
+.register-content{
+  .content__block--six{
+    @include bp($solarsystem){
+      text-align: left;
+      width: 100%;
+    }
+    @include bp(900px){
+      padding: 0;
+    }
+  }
+  .content__block--three{
+    @include bp($solarsystem){
+      width: 50%;
+      float: left;
+    }
+    @include bp(900px){
+      padding: 0;
+    }
+    @include bp(650px){
+      width: 100%;
+    }
+  }
+}

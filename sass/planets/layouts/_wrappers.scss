@@ -36,6 +36,79 @@
     p {
       margin: 0;
     }
+    &:nth-of-type(2){
+      img{
+        float: left;
+        max-width: 100%;
+        width: 112px;
+        height: auto;
+        @include bp(650px){
+          float: none;
+          clear: both;
+        }
+      }
+    }
+    &:nth-of-type(3){
+      img{
+        float: left;
+        max-width: 100%;
+        width: 136px;
+        height: auto;
+        @include bp(750px){
+          float: none;
+        }
+      }
+    }
+    &:nth-of-type(4){
+      img{
+        width: 100%;
+        max-width: 314px;
+        height: auto;
+      }
+    }
+    &:nth-of-type(5){
+      img{
+        width: 100%;
+        max-width: 259px;
+        height: auto;
+      }
+    }
+    &:nth-of-type(6){
+      img{
+        float: right;
+        width: 78px;
+        max-width: 100%;
+        height: auto;
+        @include bp(650px){
+          float: none;
+          clear: both;
+        }
+      }
+    }
+    &:nth-of-type(8){
+      img{
+        float: right;
+        width: 94px;
+        max-width: 100%;
+        height: auto;
+        @include bp(650px){
+          float: none;
+          clear: both;
+        }
+      }
+    }
+    &:nth-of-type(9){
+      img{
+        float: right;
+        width: 93px;
+        max-width: 100%;
+        height: auto;
+        @include bp(650px){
+          float: none;
+          clear: both;
+        }
+      }
+    }
   }
 }
 
@@ -84,6 +157,9 @@
         height: 30px;
       }
     }
+    @include bp($planetary){
+      width: 100%;
+    }
   }
   .peer_rt {
     width: 68%;
@@ -104,6 +180,9 @@
         margin: 0 0 8px 0;
         padding: 0;
       }
+    }
+    @include bp($planetary){
+      width: 100%;
     }
   }
 }
@@ -139,9 +218,20 @@
         height: 30px;
       }
     }
+    img{
+      width: 200px;
+      height: auto;
+    }
+    @include bp($solarsystem){
+      width: 29%;
+    }
+    @include bp(600px){
+      width: 100%;
+    }
   }
   .peer_rt {
     width: 78%;
+    text-align: left;
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -163,6 +253,16 @@
         margin: 0 0 8px 0;
         padding: 0;
       }
+    }
+    img{
+      width: 200px;
+      height: auto;
+    }
+    @include bp($solarsystem){
+      width: 70%;
+    }
+    @include bp(600px){
+      width: 100%;
     }
   }
 }

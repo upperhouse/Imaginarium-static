@@ -92,6 +92,32 @@ input {
   }
 }
 
+.register-content{
+  textarea,
+  input[type="file"]{
+    margin-top: 1em;
+    width: 100%;
+  }
+  input{
+    width: 100%;
+  }
+}
+
+.page-torso--sidebar{
+  input{
+    width: 50%;
+    @include bp(800px){
+      width: 100%;
+    }
+  }
+  .content__block--full{
+    &.register{
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+}
+
 .peerpbtn {
   margin-top: 24px;
 }

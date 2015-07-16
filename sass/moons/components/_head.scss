@@ -179,8 +179,9 @@
       .hero-slider__cta {
         background: $color-2;
         color: #ffffff;
-        height: 75px;
+        min-height: 75px;
         padding: 15px $pad;
+        float: left;
         font: {
           size: emCalc(13pt);
         };

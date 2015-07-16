@@ -88,6 +88,12 @@
     &:before {
       background: $color-3;
     }
+    &:hover{
+      h2,
+      p{
+        color: $color-1;
+      }
+    }
     &.circle__cta--small {
       &:before {
         background: none;
@@ -98,6 +104,12 @@
     background: #9b171a;
     &:before {
       background: #9b171a;
+    }
+    &:hover{
+      h2,
+      p{
+        color: $color-1;
+      }
     }
     &.circle__cta--small {
       &:before {
